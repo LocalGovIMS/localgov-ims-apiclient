@@ -1,0 +1,924 @@
+x-generator: NSwag v13.15.7.0 (NJsonSchema v10.6.7.0 (Newtonsoft.Json v11.0.0.0))
+openapi: 3.0.0
+info:
+  title: LocalGovImsApi
+  version: 1.0.0
+paths:
+  /api/Notification:
+    post:
+      tags:
+        - Notification
+      operationId: Notification_Post
+      requestBody:
+        x-name: model
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NotificationModel'
+        required: true
+        x-position: 1
+      responses:
+        '202':
+          description: Accepted
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+  /api/PendingTransactions:
+    post:
+      tags:
+        - PendingTransactions
+      operationId: PendingTransactions_Post
+      requestBody:
+        x-name: model
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PendingTransactionModel'
+        required: true
+        x-position: 1
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PendingTransactionModel'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: string
+  /api/PendingTransactions/{reference}:
+    get:
+      tags:
+        - PendingTransactions
+      operationId: PendingTransactions_Get
+      parameters:
+        - name: reference
+          in: path
+          required: true
+          schema:
+            type: string
+            nullable: true
+          x-position: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PendingTransactionModel'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /api/PendingTransaction/{reference}/Authorise:
+    post:
+      tags:
+        - PendingTransactions
+      operationId: PendingTransactions_Authorise
+      parameters:
+        - name: reference
+          in: path
+          required: true
+          schema:
+            type: string
+            nullable: true
+          x-position: 1
+      requestBody:
+        x-name: model
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthoriseModel'
+        required: true
+        x-position: 2
+      responses:
+        '200':
+          description: Ok
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: string
+  /api/PendingTransaction/{reference}/ProcessPayment:
+    post:
+      tags:
+        - PendingTransactions
+      operationId: PendingTransactions_ProcessPayment
+      parameters:
+        - name: reference
+          in: path
+          required: true
+          schema:
+            type: string
+            nullable: true
+          x-position: 1
+      requestBody:
+        x-name: model
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProcessPaymentModel'
+        required: true
+        x-position: 2
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessPaymentResponse'
+        '400':
+          description: Bad request
+  /api/Suspense:
+    post:
+      tags:
+        - Suspense
+      operationId: Suspense_Post
+      requestBody:
+        x-name: model
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SuspenseModel'
+        required: true
+        x-position: 1
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuspenseModel'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: string
+    get:
+      tags:
+        - Suspense
+      operationId: Suspense_Search
+      parameters:
+        - name: CreatedAtDateFrom
+          in: query
+          schema:
+            type: string
+            format: date-time
+            nullable: true
+        - name: CreatedAtDateTo
+          in: query
+          schema:
+            type: string
+            format: date-time
+            nullable: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SuspenseModel'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /api/Suspense/{id}:
+    get:
+      tags:
+        - Suspense
+      operationId: Suspense_Get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+          x-position: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuspenseModel'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /api/ProcessedTransactions:
+    post:
+      tags:
+        - ProcessedTransactions
+      operationId: ProcessedTransactions_Post
+      requestBody:
+        x-name: model
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProcessedTransactionModel'
+        required: true
+        x-position: 1
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessedTransactionModel'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: string
+    get:
+      tags:
+        - ProcessedTransactions
+      operationId: ProcessedTransactions_Search
+      parameters:
+        - name: ReceiptNumber
+          in: query
+          schema:
+            type: string
+            nullable: true
+        - name: FundCodes
+          in: query
+          style: form
+          explode: true
+          schema:
+            type: array
+            nullable: true
+            items:
+              type: string
+        - name: AccountReference
+          in: query
+          schema:
+            type: string
+            nullable: true
+        - name: Amount
+          in: query
+          schema:
+            type: number
+            format: decimal
+            nullable: true
+        - name: StartDate
+          in: query
+          schema:
+            type: string
+            format: date-time
+            nullable: true
+        - name: EndDate
+          in: query
+          schema:
+            type: string
+            format: date-time
+            nullable: true
+        - name: AppReference
+          in: query
+          schema:
+            type: string
+            nullable: true
+        - name: MopCodes
+          in: query
+          style: form
+          explode: true
+          schema:
+            type: array
+            nullable: true
+            items:
+              type: string
+        - name: Narrative
+          in: query
+          schema:
+            type: string
+            nullable: true
+        - name: InternalReference
+          in: query
+          schema:
+            type: string
+            nullable: true
+        - name: PspReference
+          in: query
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProcessedTransactionModel'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /api/ProcessedTransactions/{reference}:
+    get:
+      tags:
+        - ProcessedTransactions
+      operationId: ProcessedTransactions_Get
+      parameters:
+        - name: reference
+          in: path
+          required: true
+          schema:
+            type: string
+            nullable: true
+          x-position: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessedTransactionModel'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /api/Funds/{fundCode}:
+    get:
+      tags:
+        - Funds
+      operationId: Funds_Get
+      parameters:
+        - name: fundCode
+          in: path
+          required: true
+          schema:
+            type: string
+            nullable: true
+          x-position: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FundModel'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /api/AccountHolders:
+    post:
+      tags:
+        - AccountHolders
+      operationId: AccountHolders_Post
+      requestBody:
+        x-name: model
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountHolderModel'
+        required: true
+        x-position: 1
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountHolderModel'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: string
+    patch:
+      tags:
+        - AccountHolders
+      operationId: AccountHolders_Patch
+      requestBody:
+        x-name: model
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountHolderModel'
+        required: true
+        x-position: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountHolderModel'
+        '400':
+          description: Bad request
+  /api/AccountHolders/{reference}:
+    get:
+      tags:
+        - AccountHolders
+      operationId: AccountHolders_Get
+      parameters:
+        - name: reference
+          in: path
+          required: true
+          schema:
+            type: string
+            nullable: true
+          x-position: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountHolderModel'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /api/FundMetadata/{key}/{fundCode}:
+    get:
+      tags:
+        - FundMetadata
+      operationId: FundMetadata_Get
+      parameters:
+        - name: fundCode
+          in: path
+          required: true
+          schema:
+            type: string
+            nullable: true
+          x-position: 1
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+            nullable: true
+          x-position: 2
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FundMetadataModel'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /api/MethodOfPayments:
+    get:
+      tags:
+        - MethodOfPayments
+      operationId: MethodOfPayments_Search
+      parameters:
+        - name: Type
+          in: query
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MethodOfPaymentModel'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+components:
+  schemas:
+    NotificationModel:
+      type: object
+      additionalProperties: false
+      properties:
+        MerchantReference:
+          type: string
+          nullable: true
+        EventCode:
+          type: string
+          nullable: true
+        OriginalReference:
+          type: string
+          nullable: true
+        PspReference:
+          type: string
+          nullable: true
+        EventDate:
+          type: string
+          format: date-time
+          nullable: true
+        PaymentMethod:
+          type: string
+          nullable: true
+        Success:
+          type: boolean
+        Reason:
+          type: string
+          nullable: true
+        Operations:
+          type: string
+          nullable: true
+        Live:
+          type: boolean
+        Processed:
+          type: boolean
+        MerchantAccountCode:
+          type: string
+          nullable: true
+        Amount:
+          type: number
+          format: decimal
+          nullable: true
+    PendingTransactionModel:
+      type: object
+      additionalProperties: false
+      properties:
+        Id:
+          type: integer
+          format: int32
+        Reference:
+          type: string
+          nullable: true
+        InternalReference:
+          type: string
+          nullable: true
+        OfficeCode:
+          type: string
+          maxLength: 2
+          minLength: 0
+          nullable: true
+        CreatedDate:
+          type: string
+          format: date-time
+          nullable: true
+        TransactionDate:
+          type: string
+          format: date-time
+          nullable: true
+        AccountReference:
+          type: string
+          maxLength: 30
+          minLength: 0
+          nullable: true
+        UserCode:
+          type: integer
+          format: int32
+        FundCode:
+          type: string
+          maxLength: 5
+          minLength: 0
+          nullable: true
+        MopCode:
+          type: string
+          maxLength: 5
+          minLength: 0
+          nullable: true
+        Amount:
+          type: number
+          format: decimal
+          nullable: true
+        VatCode:
+          type: string
+          maxLength: 2
+          minLength: 0
+          nullable: true
+        VatRate:
+          type: number
+          format: float
+        VatAmount:
+          type: number
+          format: decimal
+          nullable: true
+        Narrative:
+          type: string
+          maxLength: 100
+          minLength: 0
+          nullable: true
+        BatchReference:
+          type: string
+          maxLength: 30
+          minLength: 0
+          nullable: true
+        ExternalReference:
+          type: string
+          maxLength: 100
+          minLength: 0
+          nullable: true
+        PayeeName:
+          type: string
+          maxLength: 50
+          minLength: 0
+          nullable: true
+        PayeeBusinessName:
+          type: string
+          maxLength: 100
+          minLength: 0
+          nullable: true
+        PayeePremiseNumber:
+          type: string
+          maxLength: 50
+          minLength: 0
+          nullable: true
+        PayeePremiseName:
+          type: string
+          maxLength: 100
+          minLength: 0
+          nullable: true
+        PayeeStreet:
+          type: string
+          maxLength: 50
+          minLength: 0
+          nullable: true
+        PayeeArea:
+          type: string
+          maxLength: 50
+          minLength: 0
+          nullable: true
+        PayeeTown:
+          type: string
+          maxLength: 50
+          minLength: 0
+          nullable: true
+        PayeeCounty:
+          type: string
+          maxLength: 50
+          minLength: 0
+          nullable: true
+        PayeePostCode:
+          type: string
+          maxLength: 10
+          minLength: 0
+          nullable: true
+        SuccessUrl:
+          type: string
+          nullable: true
+        CancelUrl:
+          type: string
+          maxLength: 255
+          minLength: 0
+          nullable: true
+        FailUrl:
+          type: string
+          maxLength: 255
+          minLength: 0
+          nullable: true
+        ExpiryDate:
+          type: string
+          format: date-time
+          nullable: true
+        StatusId:
+          type: integer
+          format: int32
+    AuthoriseModel:
+      type: object
+      additionalProperties: false
+      properties:
+        PspReference:
+          type: string
+          nullable: true
+    ProcessPaymentResponse:
+      type: object
+      additionalProperties: false
+      properties:
+        RedirectUrl:
+          type: string
+          nullable: true
+        Success:
+          type: boolean
+        IsLegacy:
+          type: boolean
+    ProcessPaymentModel:
+      type: object
+      additionalProperties: false
+      properties:
+        AuthResult:
+          type: string
+          nullable: true
+        PspReference:
+          type: string
+          nullable: true
+        MerchantReference:
+          type: string
+          nullable: true
+        PaymentMethod:
+          type: string
+          nullable: true
+    SuspenseModel:
+      type: object
+      additionalProperties: false
+      properties:
+        Id:
+          type: integer
+          format: int32
+        TransactionDate:
+          type: string
+          format: date-time
+        CreatedAt:
+          type: string
+          format: date-time
+        AccountNumber:
+          type: string
+          nullable: true
+        Narrative:
+          type: string
+          nullable: true
+        Amount:
+          type: number
+          format: decimal
+        BatchReference:
+          type: string
+          nullable: true
+        ProcessId:
+          type: string
+          nullable: true
+        Notes:
+          type: string
+          nullable: true
+    ProcessedTransactionModel:
+      type: object
+      additionalProperties: false
+      properties:
+        Reference:
+          type: string
+          nullable: true
+        InternalReference:
+          type: string
+          nullable: true
+        PspReference:
+          type: string
+          nullable: true
+        OfficeCode:
+          type: string
+          nullable: true
+        EntryDate:
+          type: string
+          format: date-time
+          nullable: true
+        TransactionDate:
+          type: string
+          format: date-time
+          nullable: true
+        AccountReference:
+          type: string
+          nullable: true
+        UserCode:
+          type: integer
+          format: int32
+        FundCode:
+          type: string
+          nullable: true
+        MopCode:
+          type: string
+          nullable: true
+        Amount:
+          type: number
+          format: decimal
+          nullable: true
+        VatCode:
+          type: string
+          nullable: true
+        VatRate:
+          type: number
+          format: float
+        VatAmount:
+          type: number
+          format: decimal
+          nullable: true
+        Narrative:
+          type: string
+          nullable: true
+        BatchReference:
+          type: string
+          nullable: true
+    FundModel:
+      type: object
+      additionalProperties: false
+      properties:
+        FundCode:
+          type: string
+          nullable: true
+        FundName:
+          type: string
+          nullable: true
+        UseGeneralLedgerCode:
+          type: boolean
+        GeneralLedgerCode:
+          type: string
+          nullable: true
+        IsGeneralLedgerDetail:
+          type: boolean
+    AccountHolderModel:
+      type: object
+      additionalProperties: false
+      properties:
+        AccountReference:
+          type: string
+          nullable: true
+        FundCode:
+          type: string
+          nullable: true
+        CurrentBalance:
+          type: number
+          format: decimal
+          nullable: true
+        PeriodCredit:
+          type: number
+          format: decimal
+          nullable: true
+        PeriodDebit:
+          type: number
+          format: decimal
+          nullable: true
+        Title:
+          type: string
+          nullable: true
+        Forename:
+          type: string
+          nullable: true
+        Surname:
+          type: string
+          nullable: true
+        HouseNumber:
+          type: string
+          nullable: true
+        AddressLine1:
+          type: string
+          nullable: true
+        AddressLine2:
+          type: string
+          nullable: true
+        AddressLine3:
+          type: string
+          nullable: true
+        AddressLine4:
+          type: string
+          nullable: true
+        Postcode:
+          type: string
+          nullable: true
+        RecordType:
+          type: string
+          nullable: true
+        UserField1:
+          type: string
+          nullable: true
+        UserField2:
+          type: string
+          nullable: true
+        UserField3:
+          type: string
+          nullable: true
+        PersonalisedStopMessage:
+          type: string
+          nullable: true
+        StopMessageReference:
+          type: string
+          nullable: true
+    FundMetadataModel:
+      type: object
+      additionalProperties: false
+      properties:
+        FundCode:
+          type: string
+          nullable: true
+        Key:
+          type: string
+          nullable: true
+        Value:
+          type: string
+          nullable: true
+    MethodOfPaymentModel:
+      type: object
+      additionalProperties: false
+      properties:
+        Code:
+          type: string
+          nullable: true
+        Name:
+          type: string
+          nullable: true
+        MaximumAmount:
+          type: number
+          format: decimal
+        MinimumAmount:
+          type: number
+          format: decimal
+        Disabled:
+          type: boolean
