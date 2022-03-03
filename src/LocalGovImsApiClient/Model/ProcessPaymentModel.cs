@@ -38,12 +38,14 @@ namespace LocalGovImsApiClient.Model
         /// <param name="pspReference">pspReference.</param>
         /// <param name="merchantReference">merchantReference.</param>
         /// <param name="paymentMethod">paymentMethod.</param>
-        public ProcessPaymentModel(string authResult = default(string), string pspReference = default(string), string merchantReference = default(string), string paymentMethod = default(string))
+        /// <param name="fee">fee.</param>
+        public ProcessPaymentModel(string authResult = default(string), string pspReference = default(string), string merchantReference = default(string), string paymentMethod = default(string), int fee = default(int))
         {
             this.AuthResult = authResult;
             this.PspReference = pspReference;
             this.MerchantReference = merchantReference;
             this.PaymentMethod = paymentMethod;
+            this.Fee = fee;
         }
 
         /// <summary>
@@ -71,6 +73,12 @@ namespace LocalGovImsApiClient.Model
         public string PaymentMethod { get; set; }
 
         /// <summary>
+        /// Gets or Sets Fee
+        /// </summary>
+        [DataMember(Name = "Fee", EmitDefaultValue = false)]
+        public int Fee { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -82,6 +90,7 @@ namespace LocalGovImsApiClient.Model
             sb.Append("  PspReference: ").Append(PspReference).Append("\n");
             sb.Append("  MerchantReference: ").Append(MerchantReference).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
+            sb.Append("  Fee: ").Append(Fee).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -136,6 +145,10 @@ namespace LocalGovImsApiClient.Model
                     this.PaymentMethod == input.PaymentMethod ||
                     (this.PaymentMethod != null &&
                     this.PaymentMethod.Equals(input.PaymentMethod))
+                ) && 
+                (
+                    this.Fee == input.Fee ||
+                    this.Fee.Equals(input.Fee)
                 );
         }
 
@@ -164,6 +177,7 @@ namespace LocalGovImsApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.PaymentMethod.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Fee.GetHashCode();
                 return hashCode;
             }
         }
