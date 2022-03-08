@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **PspReference** | **string** |  | [optional] 
 **MerchantReference** | **string** |  | [optional] 
 **PaymentMethod** | **string** |  | [optional] 
-**Fee** | **int** |  | [optional] 
+**Fee** | **decimal?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -39,7 +39,7 @@ namespace LocalGovImsApiClient.Model
         /// <param name="merchantReference">merchantReference.</param>
         /// <param name="paymentMethod">paymentMethod.</param>
         /// <param name="fee">fee.</param>
-        public ProcessPaymentModel(string authResult = default(string), string pspReference = default(string), string merchantReference = default(string), string paymentMethod = default(string), int fee = default(int))
+        public ProcessPaymentModel(string authResult = default(string), string pspReference = default(string), string merchantReference = default(string), string paymentMethod = default(string), decimal? fee = default(decimal?))
         {
             this.AuthResult = authResult;
             this.PspReference = pspReference;
@@ -75,8 +75,8 @@ namespace LocalGovImsApiClient.Model
         /// <summary>
         /// Gets or Sets Fee
         /// </summary>
-        [DataMember(Name = "Fee", EmitDefaultValue = false)]
-        public int Fee { get; set; }
+        [DataMember(Name = "Fee", EmitDefaultValue = true)]
+        public decimal? Fee { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -148,7 +148,8 @@ namespace LocalGovImsApiClient.Model
                 ) && 
                 (
                     this.Fee == input.Fee ||
-                    this.Fee.Equals(input.Fee)
+                    (this.Fee != null &&
+                    this.Fee.Equals(input.Fee))
                 );
         }
 
@@ -177,7 +178,10 @@ namespace LocalGovImsApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.PaymentMethod.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Fee.GetHashCode();
+                if (this.Fee != null)
+                {
+                    hashCode = (hashCode * 59) + this.Fee.GetHashCode();
+                }
                 return hashCode;
             }
         }
