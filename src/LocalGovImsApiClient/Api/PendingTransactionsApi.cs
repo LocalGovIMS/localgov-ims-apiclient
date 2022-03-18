@@ -87,6 +87,26 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="processFeeModel"></param>
+        /// <returns></returns>
+        void PendingTransactionsProcessFee(string reference, ProcessFeeModel processFeeModel);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
+        /// <param name="processFeeModel"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> PendingTransactionsProcessFeeWithHttpInfo(string reference, ProcessFeeModel processFeeModel);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
         /// <param name="processPaymentModel"></param>
         /// <returns>ProcessPaymentResponse</returns>
         ProcessPaymentResponse PendingTransactionsProcessPayment(string reference, ProcessPaymentModel processPaymentModel);
@@ -182,6 +202,31 @@ namespace LocalGovImsApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;PendingTransactionModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<PendingTransactionModel>>> PendingTransactionsPostWithHttpInfoAsync(PendingTransactionModel pendingTransactionModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
+        /// <param name="processFeeModel"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task PendingTransactionsProcessFeeAsync(string reference, ProcessFeeModel processFeeModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
+        /// <param name="processFeeModel"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> PendingTransactionsProcessFeeWithHttpInfoAsync(string reference, ProcessFeeModel processFeeModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -740,6 +785,156 @@ namespace LocalGovImsApiClient.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("PendingTransactionsPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
+        /// <param name="processFeeModel"></param>
+        /// <returns></returns>
+        public void PendingTransactionsProcessFee(string reference, ProcessFeeModel processFeeModel)
+        {
+            PendingTransactionsProcessFeeWithHttpInfo(reference, processFeeModel);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
+        /// <param name="processFeeModel"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public LocalGovImsApiClient.Client.ApiResponse<Object> PendingTransactionsProcessFeeWithHttpInfo(string reference, ProcessFeeModel processFeeModel)
+        {
+            // verify the required parameter 'reference' is set
+            if (reference == null)
+            {
+                throw new LocalGovImsApiClient.Client.ApiException(400, "Missing required parameter 'reference' when calling PendingTransactionsApi->PendingTransactionsProcessFee");
+            }
+
+            // verify the required parameter 'processFeeModel' is set
+            if (processFeeModel == null)
+            {
+                throw new LocalGovImsApiClient.Client.ApiException(400, "Missing required parameter 'processFeeModel' when calling PendingTransactionsApi->PendingTransactionsProcessFee");
+            }
+
+            LocalGovImsApiClient.Client.RequestOptions localVarRequestOptions = new LocalGovImsApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = LocalGovImsApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = LocalGovImsApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("reference", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(reference)); // path parameter
+            localVarRequestOptions.Data = processFeeModel;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/api/ProcessedTransactions/{reference}/ProcessFee", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PendingTransactionsProcessFee", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
+        /// <param name="processFeeModel"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task PendingTransactionsProcessFeeAsync(string reference, ProcessFeeModel processFeeModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await PendingTransactionsProcessFeeWithHttpInfoAsync(reference, processFeeModel, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
+        /// <param name="processFeeModel"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<Object>> PendingTransactionsProcessFeeWithHttpInfoAsync(string reference, ProcessFeeModel processFeeModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'reference' is set
+            if (reference == null)
+            {
+                throw new LocalGovImsApiClient.Client.ApiException(400, "Missing required parameter 'reference' when calling PendingTransactionsApi->PendingTransactionsProcessFee");
+            }
+
+            // verify the required parameter 'processFeeModel' is set
+            if (processFeeModel == null)
+            {
+                throw new LocalGovImsApiClient.Client.ApiException(400, "Missing required parameter 'processFeeModel' when calling PendingTransactionsApi->PendingTransactionsProcessFee");
+            }
+
+
+            LocalGovImsApiClient.Client.RequestOptions localVarRequestOptions = new LocalGovImsApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = LocalGovImsApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = LocalGovImsApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("reference", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(reference)); // path parameter
+            localVarRequestOptions.Data = processFeeModel;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/ProcessedTransactions/{reference}/ProcessFee", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PendingTransactionsProcessFee", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

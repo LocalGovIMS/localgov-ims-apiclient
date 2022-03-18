@@ -110,6 +110,7 @@ Class | Method | HTTP request | Description
 *PendingTransactionsApi* | [**PendingTransactionsAuthorise**](docs/PendingTransactionsApi.md#pendingtransactionsauthorise) | **POST** /api/PendingTransaction/{reference}/Authorise | 
 *PendingTransactionsApi* | [**PendingTransactionsGet**](docs/PendingTransactionsApi.md#pendingtransactionsget) | **GET** /api/PendingTransactions/{reference} | 
 *PendingTransactionsApi* | [**PendingTransactionsPost**](docs/PendingTransactionsApi.md#pendingtransactionspost) | **POST** /api/PendingTransactions | 
+*PendingTransactionsApi* | [**PendingTransactionsProcessFee**](docs/PendingTransactionsApi.md#pendingtransactionsprocessfee) | **POST** /api/ProcessedTransactions/{reference}/ProcessFee | 
 *PendingTransactionsApi* | [**PendingTransactionsProcessPayment**](docs/PendingTransactionsApi.md#pendingtransactionsprocesspayment) | **POST** /api/PendingTransaction/{reference}/ProcessPayment | 
 *ProcessedTransactionsApi* | [**ProcessedTransactionsGet**](docs/ProcessedTransactionsApi.md#processedtransactionsget) | **GET** /api/ProcessedTransactions/{reference} | 
 *ProcessedTransactionsApi* | [**ProcessedTransactionsPost**](docs/ProcessedTransactionsApi.md#processedtransactionspost) | **POST** /api/ProcessedTransactions | 
@@ -129,6 +130,7 @@ Class | Method | HTTP request | Description
  - [Model.MethodOfPaymentModel](docs/MethodOfPaymentModel.md)
  - [Model.NotificationModel](docs/NotificationModel.md)
  - [Model.PendingTransactionModel](docs/PendingTransactionModel.md)
+ - [Model.ProcessFeeModel](docs/ProcessFeeModel.md)
  - [Model.ProcessPaymentModel](docs/ProcessPaymentModel.md)
  - [Model.ProcessPaymentResponse](docs/ProcessPaymentResponse.md)
  - [Model.ProcessedTransactionModel](docs/ProcessedTransactionModel.md)

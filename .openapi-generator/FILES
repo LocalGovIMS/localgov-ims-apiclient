@@ -16,6 +16,7 @@ docs/NotificationApi.md
 docs/NotificationModel.md
 docs/PendingTransactionModel.md
 docs/PendingTransactionsApi.md
+docs/ProcessFeeModel.md
 docs/ProcessPaymentModel.md
 docs/ProcessPaymentResponse.md
 docs/ProcessedTransactionModel.md
@@ -39,6 +40,7 @@ src/LocalGovImsApiClient.Test/Model/FundModelTests.cs
 src/LocalGovImsApiClient.Test/Model/MethodOfPaymentModelTests.cs
 src/LocalGovImsApiClient.Test/Model/NotificationModelTests.cs
 src/LocalGovImsApiClient.Test/Model/PendingTransactionModelTests.cs
+src/LocalGovImsApiClient.Test/Model/ProcessFeeModelTests.cs
 src/LocalGovImsApiClient.Test/Model/ProcessPaymentModelTests.cs
 src/LocalGovImsApiClient.Test/Model/ProcessPaymentResponseTests.cs
 src/LocalGovImsApiClient.Test/Model/ProcessedTransactionModelTests.cs
@@ -76,6 +78,7 @@ src/LocalGovImsApiClient/Model/FundModel.cs
 src/LocalGovImsApiClient/Model/MethodOfPaymentModel.cs
 src/LocalGovImsApiClient/Model/NotificationModel.cs
 src/LocalGovImsApiClient/Model/PendingTransactionModel.cs
+src/LocalGovImsApiClient/Model/ProcessFeeModel.cs
 src/LocalGovImsApiClient/Model/ProcessPaymentModel.cs
 src/LocalGovImsApiClient/Model/ProcessPaymentResponse.cs
 src/LocalGovImsApiClient/Model/ProcessedTransactionModel.cs

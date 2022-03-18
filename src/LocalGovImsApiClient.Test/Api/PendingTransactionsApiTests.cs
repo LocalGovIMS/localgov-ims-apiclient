@@ -91,6 +91,18 @@ namespace LocalGovImsApiClient.Test.Api
         }
 
         /// <summary>
+        /// Test PendingTransactionsProcessFee
+        /// </summary>
+        [Fact]
+        public void PendingTransactionsProcessFeeTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string reference = null;
+            //ProcessFeeModel processFeeModel = null;
+            //instance.PendingTransactionsProcessFee(reference, processFeeModel);
+        }
+
+        /// <summary>
         /// Test PendingTransactionsProcessPayment
         /// </summary>
         [Fact]
