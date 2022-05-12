@@ -39,13 +39,17 @@ namespace LocalGovImsApiClient.Model
         /// <param name="merchantReference">merchantReference.</param>
         /// <param name="paymentMethod">paymentMethod.</param>
         /// <param name="fee">fee.</param>
-        public ProcessPaymentModel(string authResult = default(string), string pspReference = default(string), string merchantReference = default(string), string paymentMethod = default(string), decimal? fee = default(decimal?))
+        /// <param name="cardPrefix">cardPrefix.</param>
+        /// <param name="cardSuffix">cardSuffix.</param>
+        public ProcessPaymentModel(string authResult = default(string), string pspReference = default(string), string merchantReference = default(string), string paymentMethod = default(string), decimal? fee = default(decimal?), string cardPrefix = default(string), string cardSuffix = default(string))
         {
             this.AuthResult = authResult;
             this.PspReference = pspReference;
             this.MerchantReference = merchantReference;
             this.PaymentMethod = paymentMethod;
             this.Fee = fee;
+            this.CardPrefix = cardPrefix;
+            this.CardSuffix = cardSuffix;
         }
 
         /// <summary>
@@ -79,6 +83,18 @@ namespace LocalGovImsApiClient.Model
         public decimal? Fee { get; set; }
 
         /// <summary>
+        /// Gets or Sets CardPrefix
+        /// </summary>
+        [DataMember(Name = "CardPrefix", EmitDefaultValue = true)]
+        public string CardPrefix { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CardSuffix
+        /// </summary>
+        [DataMember(Name = "CardSuffix", EmitDefaultValue = true)]
+        public string CardSuffix { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -91,6 +107,8 @@ namespace LocalGovImsApiClient.Model
             sb.Append("  MerchantReference: ").Append(MerchantReference).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
             sb.Append("  Fee: ").Append(Fee).Append("\n");
+            sb.Append("  CardPrefix: ").Append(CardPrefix).Append("\n");
+            sb.Append("  CardSuffix: ").Append(CardSuffix).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -150,6 +168,16 @@ namespace LocalGovImsApiClient.Model
                     this.Fee == input.Fee ||
                     (this.Fee != null &&
                     this.Fee.Equals(input.Fee))
+                ) && 
+                (
+                    this.CardPrefix == input.CardPrefix ||
+                    (this.CardPrefix != null &&
+                    this.CardPrefix.Equals(input.CardPrefix))
+                ) && 
+                (
+                    this.CardSuffix == input.CardSuffix ||
+                    (this.CardSuffix != null &&
+                    this.CardSuffix.Equals(input.CardSuffix))
                 );
         }
 
@@ -181,6 +209,14 @@ namespace LocalGovImsApiClient.Model
                 if (this.Fee != null)
                 {
                     hashCode = (hashCode * 59) + this.Fee.GetHashCode();
+                }
+                if (this.CardPrefix != null)
+                {
+                    hashCode = (hashCode * 59) + this.CardPrefix.GetHashCode();
+                }
+                if (this.CardSuffix != null)
+                {
+                    hashCode = (hashCode * 59) + this.CardSuffix.GetHashCode();
                 }
                 return hashCode;
             }

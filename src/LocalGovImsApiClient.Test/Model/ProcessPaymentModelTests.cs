@@ -96,6 +96,22 @@ namespace LocalGovImsApiClient.Test.Model
         {
             // TODO unit test for the property 'Fee'
         }
+        /// <summary>
+        /// Test the property 'CardPrefix'
+        /// </summary>
+        [Fact]
+        public void CardPrefixTest()
+        {
+            // TODO unit test for the property 'CardPrefix'
+        }
+        /// <summary>
+        /// Test the property 'CardSuffix'
+        /// </summary>
+        [Fact]
+        public void CardSuffixTest()
+        {
+            // TODO unit test for the property 'CardSuffix'
+        }
 
     }
 
