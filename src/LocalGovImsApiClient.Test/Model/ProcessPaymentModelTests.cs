@@ -89,6 +89,14 @@ namespace LocalGovImsApiClient.Test.Model
             // TODO unit test for the property 'PaymentMethod'
         }
         /// <summary>
+        /// Test the property 'AmountPaid'
+        /// </summary>
+        [Fact]
+        public void AmountPaidTest()
+        {
+            // TODO unit test for the property 'AmountPaid'
+        }
+        /// <summary>
         /// Test the property 'Fee'
         /// </summary>
         [Fact]

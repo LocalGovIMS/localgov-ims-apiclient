@@ -38,15 +38,17 @@ namespace LocalGovImsApiClient.Model
         /// <param name="pspReference">pspReference.</param>
         /// <param name="merchantReference">merchantReference.</param>
         /// <param name="paymentMethod">paymentMethod.</param>
+        /// <param name="amountPaid">amountPaid.</param>
         /// <param name="fee">fee.</param>
         /// <param name="cardPrefix">cardPrefix.</param>
         /// <param name="cardSuffix">cardSuffix.</param>
-        public ProcessPaymentModel(string authResult = default(string), string pspReference = default(string), string merchantReference = default(string), string paymentMethod = default(string), decimal? fee = default(decimal?), string cardPrefix = default(string), string cardSuffix = default(string))
+        public ProcessPaymentModel(string authResult = default(string), string pspReference = default(string), string merchantReference = default(string), string paymentMethod = default(string), decimal amountPaid = default(decimal), decimal? fee = default(decimal?), string cardPrefix = default(string), string cardSuffix = default(string))
         {
             this.AuthResult = authResult;
             this.PspReference = pspReference;
             this.MerchantReference = merchantReference;
             this.PaymentMethod = paymentMethod;
+            this.AmountPaid = amountPaid;
             this.Fee = fee;
             this.CardPrefix = cardPrefix;
             this.CardSuffix = cardSuffix;
@@ -75,6 +77,12 @@ namespace LocalGovImsApiClient.Model
         /// </summary>
         [DataMember(Name = "PaymentMethod", EmitDefaultValue = true)]
         public string PaymentMethod { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AmountPaid
+        /// </summary>
+        [DataMember(Name = "AmountPaid", EmitDefaultValue = false)]
+        public decimal AmountPaid { get; set; }
 
         /// <summary>
         /// Gets or Sets Fee
@@ -106,6 +114,7 @@ namespace LocalGovImsApiClient.Model
             sb.Append("  PspReference: ").Append(PspReference).Append("\n");
             sb.Append("  MerchantReference: ").Append(MerchantReference).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
+            sb.Append("  AmountPaid: ").Append(AmountPaid).Append("\n");
             sb.Append("  Fee: ").Append(Fee).Append("\n");
             sb.Append("  CardPrefix: ").Append(CardPrefix).Append("\n");
             sb.Append("  CardSuffix: ").Append(CardSuffix).Append("\n");
@@ -165,6 +174,10 @@ namespace LocalGovImsApiClient.Model
                     this.PaymentMethod.Equals(input.PaymentMethod))
                 ) && 
                 (
+                    this.AmountPaid == input.AmountPaid ||
+                    this.AmountPaid.Equals(input.AmountPaid)
+                ) && 
+                (
                     this.Fee == input.Fee ||
                     (this.Fee != null &&
                     this.Fee.Equals(input.Fee))
@@ -206,6 +219,7 @@ namespace LocalGovImsApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.PaymentMethod.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.AmountPaid.GetHashCode();
                 if (this.Fee != null)
                 {
                     hashCode = (hashCode * 59) + this.Fee.GetHashCode();
