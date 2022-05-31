@@ -31,8 +31,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SuspenseModel</returns>
-        SuspenseModel SuspenseGet(int id);
+        SuspenseModel SuspenseGet(int id, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -42,15 +43,17 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SuspenseModel</returns>
-        ApiResponse<SuspenseModel> SuspenseGetWithHttpInfo(int id);
+        ApiResponse<SuspenseModel> SuspenseGetWithHttpInfo(int id, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="suspenseModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SuspenseModel</returns>
-        SuspenseModel SuspensePost(SuspenseModel suspenseModel);
+        SuspenseModel SuspensePost(SuspenseModel suspenseModel, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -60,16 +63,18 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="suspenseModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SuspenseModel</returns>
-        ApiResponse<SuspenseModel> SuspensePostWithHttpInfo(SuspenseModel suspenseModel);
+        ApiResponse<SuspenseModel> SuspensePostWithHttpInfo(SuspenseModel suspenseModel, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createdAtDateFrom"> (optional)</param>
         /// <param name="createdAtDateTo"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;SuspenseModel&gt;</returns>
-        List<SuspenseModel> SuspenseSearch(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?));
+        List<SuspenseModel> SuspenseSearch(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -80,8 +85,9 @@ namespace LocalGovImsApiClient.Api
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createdAtDateFrom"> (optional)</param>
         /// <param name="createdAtDateTo"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;SuspenseModel&gt;</returns>
-        ApiResponse<List<SuspenseModel>> SuspenseSearchWithHttpInfo(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?));
+        ApiResponse<List<SuspenseModel>> SuspenseSearchWithHttpInfo(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -99,9 +105,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SuspenseModel</returns>
-        System.Threading.Tasks.Task<SuspenseModel> SuspenseGetAsync(int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SuspenseModel> SuspenseGetAsync(int id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -111,9 +118,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SuspenseModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SuspenseModel>> SuspenseGetWithHttpInfoAsync(int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SuspenseModel>> SuspenseGetWithHttpInfoAsync(int id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -122,9 +130,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="suspenseModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SuspenseModel</returns>
-        System.Threading.Tasks.Task<SuspenseModel> SuspensePostAsync(SuspenseModel suspenseModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SuspenseModel> SuspensePostAsync(SuspenseModel suspenseModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -134,9 +143,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="suspenseModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SuspenseModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SuspenseModel>> SuspensePostWithHttpInfoAsync(SuspenseModel suspenseModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SuspenseModel>> SuspensePostWithHttpInfoAsync(SuspenseModel suspenseModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -146,9 +156,10 @@ namespace LocalGovImsApiClient.Api
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createdAtDateFrom"> (optional)</param>
         /// <param name="createdAtDateTo"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SuspenseModel&gt;</returns>
-        System.Threading.Tasks.Task<List<SuspenseModel>> SuspenseSearchAsync(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<SuspenseModel>> SuspenseSearchAsync(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -159,9 +170,10 @@ namespace LocalGovImsApiClient.Api
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createdAtDateFrom"> (optional)</param>
         /// <param name="createdAtDateTo"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SuspenseModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<SuspenseModel>>> SuspenseSearchWithHttpInfoAsync(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<SuspenseModel>>> SuspenseSearchWithHttpInfoAsync(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -287,8 +299,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SuspenseModel</returns>
-        public SuspenseModel SuspenseGet(int id)
+        public SuspenseModel SuspenseGet(int id, int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.ApiResponse<SuspenseModel> localVarResponse = SuspenseGetWithHttpInfo(id);
             return localVarResponse.Data;
@@ -299,8 +312,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SuspenseModel</returns>
-        public LocalGovImsApiClient.Client.ApiResponse<SuspenseModel> SuspenseGetWithHttpInfo(int id)
+        public LocalGovImsApiClient.Client.ApiResponse<SuspenseModel> SuspenseGetWithHttpInfo(int id, int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.RequestOptions localVarRequestOptions = new LocalGovImsApiClient.Client.RequestOptions();
 
@@ -325,6 +339,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "SuspenseApi.SuspenseGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -346,11 +363,12 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SuspenseModel</returns>
-        public async System.Threading.Tasks.Task<SuspenseModel> SuspenseGetAsync(int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SuspenseModel> SuspenseGetAsync(int id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            LocalGovImsApiClient.Client.ApiResponse<SuspenseModel> localVarResponse = await SuspenseGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            LocalGovImsApiClient.Client.ApiResponse<SuspenseModel> localVarResponse = await SuspenseGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -359,9 +377,10 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SuspenseModel)</returns>
-        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<SuspenseModel>> SuspenseGetWithHttpInfoAsync(int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<SuspenseModel>> SuspenseGetWithHttpInfoAsync(int id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             LocalGovImsApiClient.Client.RequestOptions localVarRequestOptions = new LocalGovImsApiClient.Client.RequestOptions();
@@ -387,6 +406,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "SuspenseApi.SuspenseGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -409,8 +431,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="suspenseModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SuspenseModel</returns>
-        public SuspenseModel SuspensePost(SuspenseModel suspenseModel)
+        public SuspenseModel SuspensePost(SuspenseModel suspenseModel, int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.ApiResponse<SuspenseModel> localVarResponse = SuspensePostWithHttpInfo(suspenseModel);
             return localVarResponse.Data;
@@ -421,8 +444,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="suspenseModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SuspenseModel</returns>
-        public LocalGovImsApiClient.Client.ApiResponse<SuspenseModel> SuspensePostWithHttpInfo(SuspenseModel suspenseModel)
+        public LocalGovImsApiClient.Client.ApiResponse<SuspenseModel> SuspensePostWithHttpInfo(SuspenseModel suspenseModel, int operationIndex = 0)
         {
             // verify the required parameter 'suspenseModel' is set
             if (suspenseModel == null)
@@ -454,6 +478,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.Data = suspenseModel;
+
+            localVarRequestOptions.Operation = "SuspenseApi.SuspensePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -475,11 +502,12 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="suspenseModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SuspenseModel</returns>
-        public async System.Threading.Tasks.Task<SuspenseModel> SuspensePostAsync(SuspenseModel suspenseModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SuspenseModel> SuspensePostAsync(SuspenseModel suspenseModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            LocalGovImsApiClient.Client.ApiResponse<SuspenseModel> localVarResponse = await SuspensePostWithHttpInfoAsync(suspenseModel, cancellationToken).ConfigureAwait(false);
+            LocalGovImsApiClient.Client.ApiResponse<SuspenseModel> localVarResponse = await SuspensePostWithHttpInfoAsync(suspenseModel, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -488,9 +516,10 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="suspenseModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SuspenseModel)</returns>
-        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<SuspenseModel>> SuspensePostWithHttpInfoAsync(SuspenseModel suspenseModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<SuspenseModel>> SuspensePostWithHttpInfoAsync(SuspenseModel suspenseModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'suspenseModel' is set
             if (suspenseModel == null)
@@ -523,6 +552,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.Data = suspenseModel;
+
+            localVarRequestOptions.Operation = "SuspenseApi.SuspensePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -546,8 +578,9 @@ namespace LocalGovImsApiClient.Api
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createdAtDateFrom"> (optional)</param>
         /// <param name="createdAtDateTo"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;SuspenseModel&gt;</returns>
-        public List<SuspenseModel> SuspenseSearch(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?))
+        public List<SuspenseModel> SuspenseSearch(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?), int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.ApiResponse<List<SuspenseModel>> localVarResponse = SuspenseSearchWithHttpInfo(createdAtDateFrom, createdAtDateTo);
             return localVarResponse.Data;
@@ -559,8 +592,9 @@ namespace LocalGovImsApiClient.Api
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createdAtDateFrom"> (optional)</param>
         /// <param name="createdAtDateTo"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;SuspenseModel&gt;</returns>
-        public LocalGovImsApiClient.Client.ApiResponse<List<SuspenseModel>> SuspenseSearchWithHttpInfo(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?))
+        public LocalGovImsApiClient.Client.ApiResponse<List<SuspenseModel>> SuspenseSearchWithHttpInfo(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?), int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.RequestOptions localVarRequestOptions = new LocalGovImsApiClient.Client.RequestOptions();
 
@@ -592,6 +626,9 @@ namespace LocalGovImsApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(LocalGovImsApiClient.Client.ClientUtils.ParameterToMultiMap("", "CreatedAtDateTo", createdAtDateTo));
             }
+
+            localVarRequestOptions.Operation = "SuspenseApi.SuspenseSearch";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -614,11 +651,12 @@ namespace LocalGovImsApiClient.Api
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createdAtDateFrom"> (optional)</param>
         /// <param name="createdAtDateTo"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SuspenseModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<SuspenseModel>> SuspenseSearchAsync(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<SuspenseModel>> SuspenseSearchAsync(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            LocalGovImsApiClient.Client.ApiResponse<List<SuspenseModel>> localVarResponse = await SuspenseSearchWithHttpInfoAsync(createdAtDateFrom, createdAtDateTo, cancellationToken).ConfigureAwait(false);
+            LocalGovImsApiClient.Client.ApiResponse<List<SuspenseModel>> localVarResponse = await SuspenseSearchWithHttpInfoAsync(createdAtDateFrom, createdAtDateTo, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -628,9 +666,10 @@ namespace LocalGovImsApiClient.Api
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createdAtDateFrom"> (optional)</param>
         /// <param name="createdAtDateTo"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SuspenseModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<List<SuspenseModel>>> SuspenseSearchWithHttpInfoAsync(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<List<SuspenseModel>>> SuspenseSearchWithHttpInfoAsync(DateTime? createdAtDateFrom = default(DateTime?), DateTime? createdAtDateTo = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             LocalGovImsApiClient.Client.RequestOptions localVarRequestOptions = new LocalGovImsApiClient.Client.RequestOptions();
@@ -663,6 +702,9 @@ namespace LocalGovImsApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(LocalGovImsApiClient.Client.ClientUtils.ParameterToMultiMap("", "CreatedAtDateTo", createdAtDateTo));
             }
+
+            localVarRequestOptions.Operation = "SuspenseApi.SuspenseSearch";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

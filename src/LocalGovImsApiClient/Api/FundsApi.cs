@@ -31,8 +31,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FundModel</returns>
-        FundModel FundsGet(string fundCode);
+        FundModel FundsGet(string fundCode, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -42,8 +43,9 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FundModel</returns>
-        ApiResponse<FundModel> FundsGetWithHttpInfo(string fundCode);
+        ApiResponse<FundModel> FundsGetWithHttpInfo(string fundCode, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -61,9 +63,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FundModel</returns>
-        System.Threading.Tasks.Task<FundModel> FundsGetAsync(string fundCode, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FundModel> FundsGetAsync(string fundCode, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -73,9 +76,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FundModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FundModel>> FundsGetWithHttpInfoAsync(string fundCode, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FundModel>> FundsGetWithHttpInfoAsync(string fundCode, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -201,8 +205,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FundModel</returns>
-        public FundModel FundsGet(string fundCode)
+        public FundModel FundsGet(string fundCode, int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.ApiResponse<FundModel> localVarResponse = FundsGetWithHttpInfo(fundCode);
             return localVarResponse.Data;
@@ -213,8 +218,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FundModel</returns>
-        public LocalGovImsApiClient.Client.ApiResponse<FundModel> FundsGetWithHttpInfo(string fundCode)
+        public LocalGovImsApiClient.Client.ApiResponse<FundModel> FundsGetWithHttpInfo(string fundCode, int operationIndex = 0)
         {
             // verify the required parameter 'fundCode' is set
             if (fundCode == null)
@@ -245,6 +251,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("fundCode", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(fundCode)); // path parameter
+
+            localVarRequestOptions.Operation = "FundsApi.FundsGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -266,11 +275,12 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FundModel</returns>
-        public async System.Threading.Tasks.Task<FundModel> FundsGetAsync(string fundCode, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FundModel> FundsGetAsync(string fundCode, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            LocalGovImsApiClient.Client.ApiResponse<FundModel> localVarResponse = await FundsGetWithHttpInfoAsync(fundCode, cancellationToken).ConfigureAwait(false);
+            LocalGovImsApiClient.Client.ApiResponse<FundModel> localVarResponse = await FundsGetWithHttpInfoAsync(fundCode, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -279,9 +289,10 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FundModel)</returns>
-        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<FundModel>> FundsGetWithHttpInfoAsync(string fundCode, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<FundModel>> FundsGetWithHttpInfoAsync(string fundCode, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'fundCode' is set
             if (fundCode == null)
@@ -313,6 +324,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("fundCode", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(fundCode)); // path parameter
+
+            localVarRequestOptions.Operation = "FundsApi.FundsGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

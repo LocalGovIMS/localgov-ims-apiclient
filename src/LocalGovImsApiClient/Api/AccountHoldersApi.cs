@@ -31,8 +31,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AccountHolderModel</returns>
-        AccountHolderModel AccountHoldersGet(string reference);
+        AccountHolderModel AccountHoldersGet(string reference, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -42,15 +43,17 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AccountHolderModel</returns>
-        ApiResponse<AccountHolderModel> AccountHoldersGetWithHttpInfo(string reference);
+        ApiResponse<AccountHolderModel> AccountHoldersGetWithHttpInfo(string reference, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AccountHolderModel</returns>
-        AccountHolderModel AccountHoldersPatch(AccountHolderModel accountHolderModel);
+        AccountHolderModel AccountHoldersPatch(AccountHolderModel accountHolderModel, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -60,15 +63,17 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AccountHolderModel</returns>
-        ApiResponse<AccountHolderModel> AccountHoldersPatchWithHttpInfo(AccountHolderModel accountHolderModel);
+        ApiResponse<AccountHolderModel> AccountHoldersPatchWithHttpInfo(AccountHolderModel accountHolderModel, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AccountHolderModel</returns>
-        AccountHolderModel AccountHoldersPost(AccountHolderModel accountHolderModel);
+        AccountHolderModel AccountHoldersPost(AccountHolderModel accountHolderModel, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -78,8 +83,9 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AccountHolderModel</returns>
-        ApiResponse<AccountHolderModel> AccountHoldersPostWithHttpInfo(AccountHolderModel accountHolderModel);
+        ApiResponse<AccountHolderModel> AccountHoldersPostWithHttpInfo(AccountHolderModel accountHolderModel, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -97,9 +103,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountHolderModel</returns>
-        System.Threading.Tasks.Task<AccountHolderModel> AccountHoldersGetAsync(string reference, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AccountHolderModel> AccountHoldersGetAsync(string reference, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -109,9 +116,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountHolderModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AccountHolderModel>> AccountHoldersGetWithHttpInfoAsync(string reference, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AccountHolderModel>> AccountHoldersGetWithHttpInfoAsync(string reference, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -120,9 +128,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountHolderModel</returns>
-        System.Threading.Tasks.Task<AccountHolderModel> AccountHoldersPatchAsync(AccountHolderModel accountHolderModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AccountHolderModel> AccountHoldersPatchAsync(AccountHolderModel accountHolderModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -132,9 +141,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountHolderModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AccountHolderModel>> AccountHoldersPatchWithHttpInfoAsync(AccountHolderModel accountHolderModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AccountHolderModel>> AccountHoldersPatchWithHttpInfoAsync(AccountHolderModel accountHolderModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -143,9 +153,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountHolderModel</returns>
-        System.Threading.Tasks.Task<AccountHolderModel> AccountHoldersPostAsync(AccountHolderModel accountHolderModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AccountHolderModel> AccountHoldersPostAsync(AccountHolderModel accountHolderModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -155,9 +166,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountHolderModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AccountHolderModel>> AccountHoldersPostWithHttpInfoAsync(AccountHolderModel accountHolderModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AccountHolderModel>> AccountHoldersPostWithHttpInfoAsync(AccountHolderModel accountHolderModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -283,8 +295,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AccountHolderModel</returns>
-        public AccountHolderModel AccountHoldersGet(string reference)
+        public AccountHolderModel AccountHoldersGet(string reference, int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel> localVarResponse = AccountHoldersGetWithHttpInfo(reference);
             return localVarResponse.Data;
@@ -295,8 +308,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AccountHolderModel</returns>
-        public LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel> AccountHoldersGetWithHttpInfo(string reference)
+        public LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel> AccountHoldersGetWithHttpInfo(string reference, int operationIndex = 0)
         {
             // verify the required parameter 'reference' is set
             if (reference == null)
@@ -327,6 +341,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("reference", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(reference)); // path parameter
+
+            localVarRequestOptions.Operation = "AccountHoldersApi.AccountHoldersGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -348,11 +365,12 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountHolderModel</returns>
-        public async System.Threading.Tasks.Task<AccountHolderModel> AccountHoldersGetAsync(string reference, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AccountHolderModel> AccountHoldersGetAsync(string reference, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel> localVarResponse = await AccountHoldersGetWithHttpInfoAsync(reference, cancellationToken).ConfigureAwait(false);
+            LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel> localVarResponse = await AccountHoldersGetWithHttpInfoAsync(reference, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -361,9 +379,10 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountHolderModel)</returns>
-        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel>> AccountHoldersGetWithHttpInfoAsync(string reference, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel>> AccountHoldersGetWithHttpInfoAsync(string reference, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'reference' is set
             if (reference == null)
@@ -395,6 +414,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("reference", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(reference)); // path parameter
+
+            localVarRequestOptions.Operation = "AccountHoldersApi.AccountHoldersGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -417,8 +439,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AccountHolderModel</returns>
-        public AccountHolderModel AccountHoldersPatch(AccountHolderModel accountHolderModel)
+        public AccountHolderModel AccountHoldersPatch(AccountHolderModel accountHolderModel, int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel> localVarResponse = AccountHoldersPatchWithHttpInfo(accountHolderModel);
             return localVarResponse.Data;
@@ -429,8 +452,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AccountHolderModel</returns>
-        public LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel> AccountHoldersPatchWithHttpInfo(AccountHolderModel accountHolderModel)
+        public LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel> AccountHoldersPatchWithHttpInfo(AccountHolderModel accountHolderModel, int operationIndex = 0)
         {
             // verify the required parameter 'accountHolderModel' is set
             if (accountHolderModel == null)
@@ -462,6 +486,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.Data = accountHolderModel;
+
+            localVarRequestOptions.Operation = "AccountHoldersApi.AccountHoldersPatch";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -483,11 +510,12 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountHolderModel</returns>
-        public async System.Threading.Tasks.Task<AccountHolderModel> AccountHoldersPatchAsync(AccountHolderModel accountHolderModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AccountHolderModel> AccountHoldersPatchAsync(AccountHolderModel accountHolderModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel> localVarResponse = await AccountHoldersPatchWithHttpInfoAsync(accountHolderModel, cancellationToken).ConfigureAwait(false);
+            LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel> localVarResponse = await AccountHoldersPatchWithHttpInfoAsync(accountHolderModel, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -496,9 +524,10 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountHolderModel)</returns>
-        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel>> AccountHoldersPatchWithHttpInfoAsync(AccountHolderModel accountHolderModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel>> AccountHoldersPatchWithHttpInfoAsync(AccountHolderModel accountHolderModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'accountHolderModel' is set
             if (accountHolderModel == null)
@@ -531,6 +560,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.Data = accountHolderModel;
+
+            localVarRequestOptions.Operation = "AccountHoldersApi.AccountHoldersPatch";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -553,8 +585,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AccountHolderModel</returns>
-        public AccountHolderModel AccountHoldersPost(AccountHolderModel accountHolderModel)
+        public AccountHolderModel AccountHoldersPost(AccountHolderModel accountHolderModel, int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel> localVarResponse = AccountHoldersPostWithHttpInfo(accountHolderModel);
             return localVarResponse.Data;
@@ -565,8 +598,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AccountHolderModel</returns>
-        public LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel> AccountHoldersPostWithHttpInfo(AccountHolderModel accountHolderModel)
+        public LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel> AccountHoldersPostWithHttpInfo(AccountHolderModel accountHolderModel, int operationIndex = 0)
         {
             // verify the required parameter 'accountHolderModel' is set
             if (accountHolderModel == null)
@@ -598,6 +632,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.Data = accountHolderModel;
+
+            localVarRequestOptions.Operation = "AccountHoldersApi.AccountHoldersPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -619,11 +656,12 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountHolderModel</returns>
-        public async System.Threading.Tasks.Task<AccountHolderModel> AccountHoldersPostAsync(AccountHolderModel accountHolderModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AccountHolderModel> AccountHoldersPostAsync(AccountHolderModel accountHolderModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel> localVarResponse = await AccountHoldersPostWithHttpInfoAsync(accountHolderModel, cancellationToken).ConfigureAwait(false);
+            LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel> localVarResponse = await AccountHoldersPostWithHttpInfoAsync(accountHolderModel, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -632,9 +670,10 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountHolderModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountHolderModel)</returns>
-        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel>> AccountHoldersPostWithHttpInfoAsync(AccountHolderModel accountHolderModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<AccountHolderModel>> AccountHoldersPostWithHttpInfoAsync(AccountHolderModel accountHolderModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'accountHolderModel' is set
             if (accountHolderModel == null)
@@ -667,6 +706,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.Data = accountHolderModel;
+
+            localVarRequestOptions.Operation = "AccountHoldersApi.AccountHoldersPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

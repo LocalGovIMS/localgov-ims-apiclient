@@ -32,8 +32,9 @@ namespace LocalGovImsApiClient.Api
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
         /// <param name="key"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FundMetadataModel</returns>
-        FundMetadataModel FundMetadataGet(string fundCode, string key);
+        FundMetadataModel FundMetadataGet(string fundCode, string key, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -44,8 +45,9 @@ namespace LocalGovImsApiClient.Api
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
         /// <param name="key"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FundMetadataModel</returns>
-        ApiResponse<FundMetadataModel> FundMetadataGetWithHttpInfo(string fundCode, string key);
+        ApiResponse<FundMetadataModel> FundMetadataGetWithHttpInfo(string fundCode, string key, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -64,9 +66,10 @@ namespace LocalGovImsApiClient.Api
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
         /// <param name="key"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FundMetadataModel</returns>
-        System.Threading.Tasks.Task<FundMetadataModel> FundMetadataGetAsync(string fundCode, string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FundMetadataModel> FundMetadataGetAsync(string fundCode, string key, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -77,9 +80,10 @@ namespace LocalGovImsApiClient.Api
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
         /// <param name="key"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FundMetadataModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FundMetadataModel>> FundMetadataGetWithHttpInfoAsync(string fundCode, string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FundMetadataModel>> FundMetadataGetWithHttpInfoAsync(string fundCode, string key, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -206,8 +210,9 @@ namespace LocalGovImsApiClient.Api
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
         /// <param name="key"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FundMetadataModel</returns>
-        public FundMetadataModel FundMetadataGet(string fundCode, string key)
+        public FundMetadataModel FundMetadataGet(string fundCode, string key, int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.ApiResponse<FundMetadataModel> localVarResponse = FundMetadataGetWithHttpInfo(fundCode, key);
             return localVarResponse.Data;
@@ -219,8 +224,9 @@ namespace LocalGovImsApiClient.Api
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
         /// <param name="key"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FundMetadataModel</returns>
-        public LocalGovImsApiClient.Client.ApiResponse<FundMetadataModel> FundMetadataGetWithHttpInfo(string fundCode, string key)
+        public LocalGovImsApiClient.Client.ApiResponse<FundMetadataModel> FundMetadataGetWithHttpInfo(string fundCode, string key, int operationIndex = 0)
         {
             // verify the required parameter 'fundCode' is set
             if (fundCode == null)
@@ -258,6 +264,9 @@ namespace LocalGovImsApiClient.Api
 
             localVarRequestOptions.PathParameters.Add("fundCode", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(fundCode)); // path parameter
             localVarRequestOptions.PathParameters.Add("key", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(key)); // path parameter
+
+            localVarRequestOptions.Operation = "FundMetadataApi.FundMetadataGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -280,11 +289,12 @@ namespace LocalGovImsApiClient.Api
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
         /// <param name="key"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FundMetadataModel</returns>
-        public async System.Threading.Tasks.Task<FundMetadataModel> FundMetadataGetAsync(string fundCode, string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FundMetadataModel> FundMetadataGetAsync(string fundCode, string key, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            LocalGovImsApiClient.Client.ApiResponse<FundMetadataModel> localVarResponse = await FundMetadataGetWithHttpInfoAsync(fundCode, key, cancellationToken).ConfigureAwait(false);
+            LocalGovImsApiClient.Client.ApiResponse<FundMetadataModel> localVarResponse = await FundMetadataGetWithHttpInfoAsync(fundCode, key, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -294,9 +304,10 @@ namespace LocalGovImsApiClient.Api
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fundCode"></param>
         /// <param name="key"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FundMetadataModel)</returns>
-        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<FundMetadataModel>> FundMetadataGetWithHttpInfoAsync(string fundCode, string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<FundMetadataModel>> FundMetadataGetWithHttpInfoAsync(string fundCode, string key, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'fundCode' is set
             if (fundCode == null)
@@ -335,6 +346,9 @@ namespace LocalGovImsApiClient.Api
 
             localVarRequestOptions.PathParameters.Add("fundCode", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(fundCode)); // path parameter
             localVarRequestOptions.PathParameters.Add("key", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(key)); // path parameter
+
+            localVarRequestOptions.Operation = "FundMetadataApi.FundMetadataGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

@@ -31,8 +31,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ProcessedTransactionModel</returns>
-        ProcessedTransactionModel ProcessedTransactionsGet(string reference);
+        ProcessedTransactionModel ProcessedTransactionsGet(string reference, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -42,15 +43,17 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ProcessedTransactionModel</returns>
-        ApiResponse<ProcessedTransactionModel> ProcessedTransactionsGetWithHttpInfo(string reference);
+        ApiResponse<ProcessedTransactionModel> ProcessedTransactionsGetWithHttpInfo(string reference, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processedTransactionModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ProcessedTransactionModel</returns>
-        ProcessedTransactionModel ProcessedTransactionsPost(ProcessedTransactionModel processedTransactionModel);
+        ProcessedTransactionModel ProcessedTransactionsPost(ProcessedTransactionModel processedTransactionModel, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -60,8 +63,9 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processedTransactionModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ProcessedTransactionModel</returns>
-        ApiResponse<ProcessedTransactionModel> ProcessedTransactionsPostWithHttpInfo(ProcessedTransactionModel processedTransactionModel);
+        ApiResponse<ProcessedTransactionModel> ProcessedTransactionsPostWithHttpInfo(ProcessedTransactionModel processedTransactionModel, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -77,8 +81,9 @@ namespace LocalGovImsApiClient.Api
         /// <param name="narrative"> (optional)</param>
         /// <param name="internalReference"> (optional)</param>
         /// <param name="pspReference"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ProcessedTransactionModel&gt;</returns>
-        List<ProcessedTransactionModel> ProcessedTransactionsSearch(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string));
+        List<ProcessedTransactionModel> ProcessedTransactionsSearch(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -98,8 +103,31 @@ namespace LocalGovImsApiClient.Api
         /// <param name="narrative"> (optional)</param>
         /// <param name="internalReference"> (optional)</param>
         /// <param name="pspReference"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ProcessedTransactionModel&gt;</returns>
-        ApiResponse<List<ProcessedTransactionModel>> ProcessedTransactionsSearchWithHttpInfo(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string));
+        ApiResponse<List<ProcessedTransactionModel>> ProcessedTransactionsSearchWithHttpInfo(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
+        /// <param name="updateCardDetailsModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void ProcessedTransactionsUpdateCardDetails(string reference, UpdateCardDetailsModel updateCardDetailsModel, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
+        /// <param name="updateCardDetailsModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ProcessedTransactionsUpdateCardDetailsWithHttpInfo(string reference, UpdateCardDetailsModel updateCardDetailsModel, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -117,9 +145,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ProcessedTransactionModel</returns>
-        System.Threading.Tasks.Task<ProcessedTransactionModel> ProcessedTransactionsGetAsync(string reference, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ProcessedTransactionModel> ProcessedTransactionsGetAsync(string reference, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -129,9 +158,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ProcessedTransactionModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ProcessedTransactionModel>> ProcessedTransactionsGetWithHttpInfoAsync(string reference, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ProcessedTransactionModel>> ProcessedTransactionsGetWithHttpInfoAsync(string reference, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -140,9 +170,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processedTransactionModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ProcessedTransactionModel</returns>
-        System.Threading.Tasks.Task<ProcessedTransactionModel> ProcessedTransactionsPostAsync(ProcessedTransactionModel processedTransactionModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ProcessedTransactionModel> ProcessedTransactionsPostAsync(ProcessedTransactionModel processedTransactionModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -152,9 +183,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processedTransactionModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ProcessedTransactionModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ProcessedTransactionModel>> ProcessedTransactionsPostWithHttpInfoAsync(ProcessedTransactionModel processedTransactionModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ProcessedTransactionModel>> ProcessedTransactionsPostWithHttpInfoAsync(ProcessedTransactionModel processedTransactionModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -173,9 +205,10 @@ namespace LocalGovImsApiClient.Api
         /// <param name="narrative"> (optional)</param>
         /// <param name="internalReference"> (optional)</param>
         /// <param name="pspReference"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProcessedTransactionModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ProcessedTransactionModel>> ProcessedTransactionsSearchAsync(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ProcessedTransactionModel>> ProcessedTransactionsSearchAsync(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -195,9 +228,37 @@ namespace LocalGovImsApiClient.Api
         /// <param name="narrative"> (optional)</param>
         /// <param name="internalReference"> (optional)</param>
         /// <param name="pspReference"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProcessedTransactionModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ProcessedTransactionModel>>> ProcessedTransactionsSearchWithHttpInfoAsync(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ProcessedTransactionModel>>> ProcessedTransactionsSearchWithHttpInfoAsync(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
+        /// <param name="updateCardDetailsModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ProcessedTransactionsUpdateCardDetailsAsync(string reference, UpdateCardDetailsModel updateCardDetailsModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
+        /// <param name="updateCardDetailsModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ProcessedTransactionsUpdateCardDetailsWithHttpInfoAsync(string reference, UpdateCardDetailsModel updateCardDetailsModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -323,8 +384,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ProcessedTransactionModel</returns>
-        public ProcessedTransactionModel ProcessedTransactionsGet(string reference)
+        public ProcessedTransactionModel ProcessedTransactionsGet(string reference, int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.ApiResponse<ProcessedTransactionModel> localVarResponse = ProcessedTransactionsGetWithHttpInfo(reference);
             return localVarResponse.Data;
@@ -335,8 +397,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ProcessedTransactionModel</returns>
-        public LocalGovImsApiClient.Client.ApiResponse<ProcessedTransactionModel> ProcessedTransactionsGetWithHttpInfo(string reference)
+        public LocalGovImsApiClient.Client.ApiResponse<ProcessedTransactionModel> ProcessedTransactionsGetWithHttpInfo(string reference, int operationIndex = 0)
         {
             // verify the required parameter 'reference' is set
             if (reference == null)
@@ -367,6 +430,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("reference", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(reference)); // path parameter
+
+            localVarRequestOptions.Operation = "ProcessedTransactionsApi.ProcessedTransactionsGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -388,11 +454,12 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ProcessedTransactionModel</returns>
-        public async System.Threading.Tasks.Task<ProcessedTransactionModel> ProcessedTransactionsGetAsync(string reference, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ProcessedTransactionModel> ProcessedTransactionsGetAsync(string reference, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            LocalGovImsApiClient.Client.ApiResponse<ProcessedTransactionModel> localVarResponse = await ProcessedTransactionsGetWithHttpInfoAsync(reference, cancellationToken).ConfigureAwait(false);
+            LocalGovImsApiClient.Client.ApiResponse<ProcessedTransactionModel> localVarResponse = await ProcessedTransactionsGetWithHttpInfoAsync(reference, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -401,9 +468,10 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reference"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ProcessedTransactionModel)</returns>
-        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<ProcessedTransactionModel>> ProcessedTransactionsGetWithHttpInfoAsync(string reference, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<ProcessedTransactionModel>> ProcessedTransactionsGetWithHttpInfoAsync(string reference, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'reference' is set
             if (reference == null)
@@ -435,6 +503,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.PathParameters.Add("reference", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(reference)); // path parameter
+
+            localVarRequestOptions.Operation = "ProcessedTransactionsApi.ProcessedTransactionsGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -457,8 +528,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processedTransactionModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ProcessedTransactionModel</returns>
-        public ProcessedTransactionModel ProcessedTransactionsPost(ProcessedTransactionModel processedTransactionModel)
+        public ProcessedTransactionModel ProcessedTransactionsPost(ProcessedTransactionModel processedTransactionModel, int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.ApiResponse<ProcessedTransactionModel> localVarResponse = ProcessedTransactionsPostWithHttpInfo(processedTransactionModel);
             return localVarResponse.Data;
@@ -469,8 +541,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processedTransactionModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ProcessedTransactionModel</returns>
-        public LocalGovImsApiClient.Client.ApiResponse<ProcessedTransactionModel> ProcessedTransactionsPostWithHttpInfo(ProcessedTransactionModel processedTransactionModel)
+        public LocalGovImsApiClient.Client.ApiResponse<ProcessedTransactionModel> ProcessedTransactionsPostWithHttpInfo(ProcessedTransactionModel processedTransactionModel, int operationIndex = 0)
         {
             // verify the required parameter 'processedTransactionModel' is set
             if (processedTransactionModel == null)
@@ -502,6 +575,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.Data = processedTransactionModel;
+
+            localVarRequestOptions.Operation = "ProcessedTransactionsApi.ProcessedTransactionsPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -523,11 +599,12 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processedTransactionModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ProcessedTransactionModel</returns>
-        public async System.Threading.Tasks.Task<ProcessedTransactionModel> ProcessedTransactionsPostAsync(ProcessedTransactionModel processedTransactionModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ProcessedTransactionModel> ProcessedTransactionsPostAsync(ProcessedTransactionModel processedTransactionModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            LocalGovImsApiClient.Client.ApiResponse<ProcessedTransactionModel> localVarResponse = await ProcessedTransactionsPostWithHttpInfoAsync(processedTransactionModel, cancellationToken).ConfigureAwait(false);
+            LocalGovImsApiClient.Client.ApiResponse<ProcessedTransactionModel> localVarResponse = await ProcessedTransactionsPostWithHttpInfoAsync(processedTransactionModel, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -536,9 +613,10 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processedTransactionModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ProcessedTransactionModel)</returns>
-        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<ProcessedTransactionModel>> ProcessedTransactionsPostWithHttpInfoAsync(ProcessedTransactionModel processedTransactionModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<ProcessedTransactionModel>> ProcessedTransactionsPostWithHttpInfoAsync(ProcessedTransactionModel processedTransactionModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'processedTransactionModel' is set
             if (processedTransactionModel == null)
@@ -571,6 +649,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.Data = processedTransactionModel;
+
+            localVarRequestOptions.Operation = "ProcessedTransactionsApi.ProcessedTransactionsPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -603,8 +684,9 @@ namespace LocalGovImsApiClient.Api
         /// <param name="narrative"> (optional)</param>
         /// <param name="internalReference"> (optional)</param>
         /// <param name="pspReference"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ProcessedTransactionModel&gt;</returns>
-        public List<ProcessedTransactionModel> ProcessedTransactionsSearch(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string))
+        public List<ProcessedTransactionModel> ProcessedTransactionsSearch(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string), int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.ApiResponse<List<ProcessedTransactionModel>> localVarResponse = ProcessedTransactionsSearchWithHttpInfo(receiptNumber, fundCodes, accountReference, amount, startDate, endDate, appReference, mopCodes, narrative, internalReference, pspReference);
             return localVarResponse.Data;
@@ -625,8 +707,9 @@ namespace LocalGovImsApiClient.Api
         /// <param name="narrative"> (optional)</param>
         /// <param name="internalReference"> (optional)</param>
         /// <param name="pspReference"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ProcessedTransactionModel&gt;</returns>
-        public LocalGovImsApiClient.Client.ApiResponse<List<ProcessedTransactionModel>> ProcessedTransactionsSearchWithHttpInfo(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string))
+        public LocalGovImsApiClient.Client.ApiResponse<List<ProcessedTransactionModel>> ProcessedTransactionsSearchWithHttpInfo(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string), int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.RequestOptions localVarRequestOptions = new LocalGovImsApiClient.Client.RequestOptions();
 
@@ -694,6 +777,9 @@ namespace LocalGovImsApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(LocalGovImsApiClient.Client.ClientUtils.ParameterToMultiMap("", "PspReference", pspReference));
             }
+
+            localVarRequestOptions.Operation = "ProcessedTransactionsApi.ProcessedTransactionsSearch";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -725,11 +811,12 @@ namespace LocalGovImsApiClient.Api
         /// <param name="narrative"> (optional)</param>
         /// <param name="internalReference"> (optional)</param>
         /// <param name="pspReference"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProcessedTransactionModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ProcessedTransactionModel>> ProcessedTransactionsSearchAsync(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ProcessedTransactionModel>> ProcessedTransactionsSearchAsync(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            LocalGovImsApiClient.Client.ApiResponse<List<ProcessedTransactionModel>> localVarResponse = await ProcessedTransactionsSearchWithHttpInfoAsync(receiptNumber, fundCodes, accountReference, amount, startDate, endDate, appReference, mopCodes, narrative, internalReference, pspReference, cancellationToken).ConfigureAwait(false);
+            LocalGovImsApiClient.Client.ApiResponse<List<ProcessedTransactionModel>> localVarResponse = await ProcessedTransactionsSearchWithHttpInfoAsync(receiptNumber, fundCodes, accountReference, amount, startDate, endDate, appReference, mopCodes, narrative, internalReference, pspReference, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -748,9 +835,10 @@ namespace LocalGovImsApiClient.Api
         /// <param name="narrative"> (optional)</param>
         /// <param name="internalReference"> (optional)</param>
         /// <param name="pspReference"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProcessedTransactionModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<List<ProcessedTransactionModel>>> ProcessedTransactionsSearchWithHttpInfoAsync(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<List<ProcessedTransactionModel>>> ProcessedTransactionsSearchWithHttpInfoAsync(string receiptNumber = default(string), List<string> fundCodes = default(List<string>), string accountReference = default(string), decimal? amount = default(decimal?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string appReference = default(string), List<string> mopCodes = default(List<string>), string narrative = default(string), string internalReference = default(string), string pspReference = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             LocalGovImsApiClient.Client.RequestOptions localVarRequestOptions = new LocalGovImsApiClient.Client.RequestOptions();
@@ -820,6 +908,9 @@ namespace LocalGovImsApiClient.Api
                 localVarRequestOptions.QueryParameters.Add(LocalGovImsApiClient.Client.ClientUtils.ParameterToMultiMap("", "PspReference", pspReference));
             }
 
+            localVarRequestOptions.Operation = "ProcessedTransactionsApi.ProcessedTransactionsSearch";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<ProcessedTransactionModel>>("/api/ProcessedTransactions", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -827,6 +918,168 @@ namespace LocalGovImsApiClient.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ProcessedTransactionsSearch", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
+        /// <param name="updateCardDetailsModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void ProcessedTransactionsUpdateCardDetails(string reference, UpdateCardDetailsModel updateCardDetailsModel, int operationIndex = 0)
+        {
+            ProcessedTransactionsUpdateCardDetailsWithHttpInfo(reference, updateCardDetailsModel);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
+        /// <param name="updateCardDetailsModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public LocalGovImsApiClient.Client.ApiResponse<Object> ProcessedTransactionsUpdateCardDetailsWithHttpInfo(string reference, UpdateCardDetailsModel updateCardDetailsModel, int operationIndex = 0)
+        {
+            // verify the required parameter 'reference' is set
+            if (reference == null)
+            {
+                throw new LocalGovImsApiClient.Client.ApiException(400, "Missing required parameter 'reference' when calling ProcessedTransactionsApi->ProcessedTransactionsUpdateCardDetails");
+            }
+
+            // verify the required parameter 'updateCardDetailsModel' is set
+            if (updateCardDetailsModel == null)
+            {
+                throw new LocalGovImsApiClient.Client.ApiException(400, "Missing required parameter 'updateCardDetailsModel' when calling ProcessedTransactionsApi->ProcessedTransactionsUpdateCardDetails");
+            }
+
+            LocalGovImsApiClient.Client.RequestOptions localVarRequestOptions = new LocalGovImsApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = LocalGovImsApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = LocalGovImsApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("reference", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(reference)); // path parameter
+            localVarRequestOptions.Data = updateCardDetailsModel;
+
+            localVarRequestOptions.Operation = "ProcessedTransactionsApi.ProcessedTransactionsUpdateCardDetails";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/api/ProcessedTransactions/{reference}/UpdateCardDetails", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ProcessedTransactionsUpdateCardDetails", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
+        /// <param name="updateCardDetailsModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ProcessedTransactionsUpdateCardDetailsAsync(string reference, UpdateCardDetailsModel updateCardDetailsModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ProcessedTransactionsUpdateCardDetailsWithHttpInfoAsync(reference, updateCardDetailsModel, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reference"></param>
+        /// <param name="updateCardDetailsModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<Object>> ProcessedTransactionsUpdateCardDetailsWithHttpInfoAsync(string reference, UpdateCardDetailsModel updateCardDetailsModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'reference' is set
+            if (reference == null)
+            {
+                throw new LocalGovImsApiClient.Client.ApiException(400, "Missing required parameter 'reference' when calling ProcessedTransactionsApi->ProcessedTransactionsUpdateCardDetails");
+            }
+
+            // verify the required parameter 'updateCardDetailsModel' is set
+            if (updateCardDetailsModel == null)
+            {
+                throw new LocalGovImsApiClient.Client.ApiException(400, "Missing required parameter 'updateCardDetailsModel' when calling ProcessedTransactionsApi->ProcessedTransactionsUpdateCardDetails");
+            }
+
+
+            LocalGovImsApiClient.Client.RequestOptions localVarRequestOptions = new LocalGovImsApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = LocalGovImsApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = LocalGovImsApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("reference", LocalGovImsApiClient.Client.ClientUtils.ParameterToString(reference)); // path parameter
+            localVarRequestOptions.Data = updateCardDetailsModel;
+
+            localVarRequestOptions.Operation = "ProcessedTransactionsApi.ProcessedTransactionsUpdateCardDetails";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/ProcessedTransactions/{reference}/UpdateCardDetails", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ProcessedTransactionsUpdateCardDetails", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

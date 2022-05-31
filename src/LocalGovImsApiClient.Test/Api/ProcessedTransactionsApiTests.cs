@@ -99,5 +99,17 @@ namespace LocalGovImsApiClient.Test.Api
             //var response = instance.ProcessedTransactionsSearch(receiptNumber, fundCodes, accountReference, amount, startDate, endDate, appReference, mopCodes, narrative, internalReference, pspReference);
             //Assert.IsType<List<ProcessedTransactionModel>>(response);
         }
+
+        /// <summary>
+        /// Test ProcessedTransactionsUpdateCardDetails
+        /// </summary>
+        [Fact]
+        public void ProcessedTransactionsUpdateCardDetailsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string reference = null;
+            //UpdateCardDetailsModel updateCardDetailsModel = null;
+            //instance.ProcessedTransactionsUpdateCardDetails(reference, updateCardDetailsModel);
+        }
     }
 }

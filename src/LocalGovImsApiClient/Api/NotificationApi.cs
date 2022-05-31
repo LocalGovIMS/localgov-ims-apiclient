@@ -31,8 +31,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void NotificationPost(NotificationModel notificationModel);
+        void NotificationPost(NotificationModel notificationModel, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -42,8 +43,9 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> NotificationPostWithHttpInfo(NotificationModel notificationModel);
+        ApiResponse<Object> NotificationPostWithHttpInfo(NotificationModel notificationModel, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -61,9 +63,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task NotificationPostAsync(NotificationModel notificationModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task NotificationPostAsync(NotificationModel notificationModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -73,9 +76,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> NotificationPostWithHttpInfoAsync(NotificationModel notificationModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> NotificationPostWithHttpInfoAsync(NotificationModel notificationModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -201,8 +205,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void NotificationPost(NotificationModel notificationModel)
+        public void NotificationPost(NotificationModel notificationModel, int operationIndex = 0)
         {
             NotificationPostWithHttpInfo(notificationModel);
         }
@@ -212,8 +217,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public LocalGovImsApiClient.Client.ApiResponse<Object> NotificationPostWithHttpInfo(NotificationModel notificationModel)
+        public LocalGovImsApiClient.Client.ApiResponse<Object> NotificationPostWithHttpInfo(NotificationModel notificationModel, int operationIndex = 0)
         {
             // verify the required parameter 'notificationModel' is set
             if (notificationModel == null)
@@ -244,6 +250,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.Data = notificationModel;
+
+            localVarRequestOptions.Operation = "NotificationApi.NotificationPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -265,11 +274,12 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task NotificationPostAsync(NotificationModel notificationModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task NotificationPostAsync(NotificationModel notificationModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await NotificationPostWithHttpInfoAsync(notificationModel, cancellationToken).ConfigureAwait(false);
+            await NotificationPostWithHttpInfoAsync(notificationModel, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -277,9 +287,10 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationModel"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<Object>> NotificationPostWithHttpInfoAsync(NotificationModel notificationModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<Object>> NotificationPostWithHttpInfoAsync(NotificationModel notificationModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'notificationModel' is set
             if (notificationModel == null)
@@ -311,6 +322,9 @@ namespace LocalGovImsApiClient.Api
             }
 
             localVarRequestOptions.Data = notificationModel;
+
+            localVarRequestOptions.Operation = "NotificationApi.NotificationPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

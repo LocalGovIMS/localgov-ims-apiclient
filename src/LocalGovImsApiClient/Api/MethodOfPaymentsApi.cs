@@ -31,8 +31,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;MethodOfPaymentModel&gt;</returns>
-        List<MethodOfPaymentModel> MethodOfPaymentsSearch(string type = default(string));
+        List<MethodOfPaymentModel> MethodOfPaymentsSearch(string type = default(string), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -42,8 +43,9 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;MethodOfPaymentModel&gt;</returns>
-        ApiResponse<List<MethodOfPaymentModel>> MethodOfPaymentsSearchWithHttpInfo(string type = default(string));
+        ApiResponse<List<MethodOfPaymentModel>> MethodOfPaymentsSearchWithHttpInfo(string type = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -61,9 +63,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MethodOfPaymentModel&gt;</returns>
-        System.Threading.Tasks.Task<List<MethodOfPaymentModel>> MethodOfPaymentsSearchAsync(string type = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<MethodOfPaymentModel>> MethodOfPaymentsSearchAsync(string type = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -73,9 +76,10 @@ namespace LocalGovImsApiClient.Api
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MethodOfPaymentModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<MethodOfPaymentModel>>> MethodOfPaymentsSearchWithHttpInfoAsync(string type = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<MethodOfPaymentModel>>> MethodOfPaymentsSearchWithHttpInfoAsync(string type = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -201,8 +205,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;MethodOfPaymentModel&gt;</returns>
-        public List<MethodOfPaymentModel> MethodOfPaymentsSearch(string type = default(string))
+        public List<MethodOfPaymentModel> MethodOfPaymentsSearch(string type = default(string), int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.ApiResponse<List<MethodOfPaymentModel>> localVarResponse = MethodOfPaymentsSearchWithHttpInfo(type);
             return localVarResponse.Data;
@@ -213,8 +218,9 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;MethodOfPaymentModel&gt;</returns>
-        public LocalGovImsApiClient.Client.ApiResponse<List<MethodOfPaymentModel>> MethodOfPaymentsSearchWithHttpInfo(string type = default(string))
+        public LocalGovImsApiClient.Client.ApiResponse<List<MethodOfPaymentModel>> MethodOfPaymentsSearchWithHttpInfo(string type = default(string), int operationIndex = 0)
         {
             LocalGovImsApiClient.Client.RequestOptions localVarRequestOptions = new LocalGovImsApiClient.Client.RequestOptions();
 
@@ -242,6 +248,9 @@ namespace LocalGovImsApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(LocalGovImsApiClient.Client.ClientUtils.ParameterToMultiMap("", "Type", type));
             }
+
+            localVarRequestOptions.Operation = "MethodOfPaymentsApi.MethodOfPaymentsSearch";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -263,11 +272,12 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MethodOfPaymentModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<MethodOfPaymentModel>> MethodOfPaymentsSearchAsync(string type = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<MethodOfPaymentModel>> MethodOfPaymentsSearchAsync(string type = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            LocalGovImsApiClient.Client.ApiResponse<List<MethodOfPaymentModel>> localVarResponse = await MethodOfPaymentsSearchWithHttpInfoAsync(type, cancellationToken).ConfigureAwait(false);
+            LocalGovImsApiClient.Client.ApiResponse<List<MethodOfPaymentModel>> localVarResponse = await MethodOfPaymentsSearchWithHttpInfoAsync(type, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -276,9 +286,10 @@ namespace LocalGovImsApiClient.Api
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MethodOfPaymentModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<List<MethodOfPaymentModel>>> MethodOfPaymentsSearchWithHttpInfoAsync(string type = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<List<MethodOfPaymentModel>>> MethodOfPaymentsSearchWithHttpInfoAsync(string type = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             LocalGovImsApiClient.Client.RequestOptions localVarRequestOptions = new LocalGovImsApiClient.Client.RequestOptions();
@@ -307,6 +318,9 @@ namespace LocalGovImsApiClient.Api
             {
                 localVarRequestOptions.QueryParameters.Add(LocalGovImsApiClient.Client.ClientUtils.ParameterToMultiMap("", "Type", type));
             }
+
+            localVarRequestOptions.Operation = "MethodOfPaymentsApi.MethodOfPaymentsSearch";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
