@@ -23,17 +23,17 @@ namespace LocalGovImsApiClient.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ITransactionImportApiSync : IApiAccessor
+    public interface IAccountHolderImportApiSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="transactionImportModel"></param>
+        /// <param name="accountHolderImportModel"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionImportModel</returns>
-        TransactionImportModel TransactionImportPost(TransactionImportModel transactionImportModel, int operationIndex = 0);
+        /// <returns>AccountHolderImportModel</returns>
+        AccountHolderImportModel AccountHolderImportPost(AccountHolderImportModel accountHolderImportModel, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -42,17 +42,17 @@ namespace LocalGovImsApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="transactionImportModel"></param>
+        /// <param name="accountHolderImportModel"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionImportModel</returns>
-        ApiResponse<TransactionImportModel> TransactionImportPostWithHttpInfo(TransactionImportModel transactionImportModel, int operationIndex = 0);
+        /// <returns>ApiResponse of AccountHolderImportModel</returns>
+        ApiResponse<AccountHolderImportModel> AccountHolderImportPostWithHttpInfo(AccountHolderImportModel accountHolderImportModel, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ITransactionImportApiAsync : IApiAccessor
+    public interface IAccountHolderImportApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -62,11 +62,11 @@ namespace LocalGovImsApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="transactionImportModel"></param>
+        /// <param name="accountHolderImportModel"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionImportModel</returns>
-        System.Threading.Tasks.Task<TransactionImportModel> TransactionImportPostAsync(TransactionImportModel transactionImportModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of AccountHolderImportModel</returns>
+        System.Threading.Tasks.Task<AccountHolderImportModel> AccountHolderImportPostAsync(AccountHolderImportModel accountHolderImportModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -75,18 +75,18 @@ namespace LocalGovImsApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="transactionImportModel"></param>
+        /// <param name="accountHolderImportModel"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionImportModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionImportModel>> TransactionImportPostWithHttpInfoAsync(TransactionImportModel transactionImportModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (AccountHolderImportModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AccountHolderImportModel>> AccountHolderImportPostWithHttpInfoAsync(AccountHolderImportModel accountHolderImportModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ITransactionImportApi : ITransactionImportApiSync, ITransactionImportApiAsync
+    public interface IAccountHolderImportApi : IAccountHolderImportApiSync, IAccountHolderImportApiAsync
     {
 
     }
@@ -94,23 +94,23 @@ namespace LocalGovImsApiClient.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class TransactionImportApi : ITransactionImportApi
+    public partial class AccountHolderImportApi : IAccountHolderImportApi
     {
         private LocalGovImsApiClient.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionImportApi"/> class.
+        /// Initializes a new instance of the <see cref="AccountHolderImportApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public TransactionImportApi() : this((string)null)
+        public AccountHolderImportApi() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionImportApi"/> class.
+        /// Initializes a new instance of the <see cref="AccountHolderImportApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public TransactionImportApi(string basePath)
+        public AccountHolderImportApi(string basePath)
         {
             this.Configuration = LocalGovImsApiClient.Client.Configuration.MergeConfigurations(
                 LocalGovImsApiClient.Client.GlobalConfiguration.Instance,
@@ -122,12 +122,12 @@ namespace LocalGovImsApiClient.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionImportApi"/> class
+        /// Initializes a new instance of the <see cref="AccountHolderImportApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public TransactionImportApi(LocalGovImsApiClient.Client.Configuration configuration)
+        public AccountHolderImportApi(LocalGovImsApiClient.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -141,13 +141,13 @@ namespace LocalGovImsApiClient.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionImportApi"/> class
+        /// Initializes a new instance of the <see cref="AccountHolderImportApi"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public TransactionImportApi(LocalGovImsApiClient.Client.ISynchronousClient client, LocalGovImsApiClient.Client.IAsynchronousClient asyncClient, LocalGovImsApiClient.Client.IReadableConfiguration configuration)
+        public AccountHolderImportApi(LocalGovImsApiClient.Client.ISynchronousClient client, LocalGovImsApiClient.Client.IAsynchronousClient asyncClient, LocalGovImsApiClient.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -204,12 +204,12 @@ namespace LocalGovImsApiClient.Api
         ///  
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="transactionImportModel"></param>
+        /// <param name="accountHolderImportModel"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionImportModel</returns>
-        public TransactionImportModel TransactionImportPost(TransactionImportModel transactionImportModel, int operationIndex = 0)
+        /// <returns>AccountHolderImportModel</returns>
+        public AccountHolderImportModel AccountHolderImportPost(AccountHolderImportModel accountHolderImportModel, int operationIndex = 0)
         {
-            LocalGovImsApiClient.Client.ApiResponse<TransactionImportModel> localVarResponse = TransactionImportPostWithHttpInfo(transactionImportModel);
+            LocalGovImsApiClient.Client.ApiResponse<AccountHolderImportModel> localVarResponse = AccountHolderImportPostWithHttpInfo(accountHolderImportModel);
             return localVarResponse.Data;
         }
 
@@ -217,15 +217,15 @@ namespace LocalGovImsApiClient.Api
         ///  
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="transactionImportModel"></param>
+        /// <param name="accountHolderImportModel"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionImportModel</returns>
-        public LocalGovImsApiClient.Client.ApiResponse<TransactionImportModel> TransactionImportPostWithHttpInfo(TransactionImportModel transactionImportModel, int operationIndex = 0)
+        /// <returns>ApiResponse of AccountHolderImportModel</returns>
+        public LocalGovImsApiClient.Client.ApiResponse<AccountHolderImportModel> AccountHolderImportPostWithHttpInfo(AccountHolderImportModel accountHolderImportModel, int operationIndex = 0)
         {
-            // verify the required parameter 'transactionImportModel' is set
-            if (transactionImportModel == null)
+            // verify the required parameter 'accountHolderImportModel' is set
+            if (accountHolderImportModel == null)
             {
-                throw new LocalGovImsApiClient.Client.ApiException(400, "Missing required parameter 'transactionImportModel' when calling TransactionImportApi->TransactionImportPost");
+                throw new LocalGovImsApiClient.Client.ApiException(400, "Missing required parameter 'accountHolderImportModel' when calling AccountHolderImportApi->AccountHolderImportPost");
             }
 
             LocalGovImsApiClient.Client.RequestOptions localVarRequestOptions = new LocalGovImsApiClient.Client.RequestOptions();
@@ -251,17 +251,17 @@ namespace LocalGovImsApiClient.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = transactionImportModel;
+            localVarRequestOptions.Data = accountHolderImportModel;
 
-            localVarRequestOptions.Operation = "TransactionImportApi.TransactionImportPost";
+            localVarRequestOptions.Operation = "AccountHolderImportApi.AccountHolderImportPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TransactionImportModel>("/api/TransactionImport", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<AccountHolderImportModel>("/api/AccountHolderImport", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionImportPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AccountHolderImportPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -275,13 +275,13 @@ namespace LocalGovImsApiClient.Api
         ///  
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="transactionImportModel"></param>
+        /// <param name="accountHolderImportModel"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionImportModel</returns>
-        public async System.Threading.Tasks.Task<TransactionImportModel> TransactionImportPostAsync(TransactionImportModel transactionImportModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of AccountHolderImportModel</returns>
+        public async System.Threading.Tasks.Task<AccountHolderImportModel> AccountHolderImportPostAsync(AccountHolderImportModel accountHolderImportModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            LocalGovImsApiClient.Client.ApiResponse<TransactionImportModel> localVarResponse = await TransactionImportPostWithHttpInfoAsync(transactionImportModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            LocalGovImsApiClient.Client.ApiResponse<AccountHolderImportModel> localVarResponse = await AccountHolderImportPostWithHttpInfoAsync(accountHolderImportModel, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -289,16 +289,16 @@ namespace LocalGovImsApiClient.Api
         ///  
         /// </summary>
         /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="transactionImportModel"></param>
+        /// <param name="accountHolderImportModel"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionImportModel)</returns>
-        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<TransactionImportModel>> TransactionImportPostWithHttpInfoAsync(TransactionImportModel transactionImportModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (AccountHolderImportModel)</returns>
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<AccountHolderImportModel>> AccountHolderImportPostWithHttpInfoAsync(AccountHolderImportModel accountHolderImportModel, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            // verify the required parameter 'transactionImportModel' is set
-            if (transactionImportModel == null)
+            // verify the required parameter 'accountHolderImportModel' is set
+            if (accountHolderImportModel == null)
             {
-                throw new LocalGovImsApiClient.Client.ApiException(400, "Missing required parameter 'transactionImportModel' when calling TransactionImportApi->TransactionImportPost");
+                throw new LocalGovImsApiClient.Client.ApiException(400, "Missing required parameter 'accountHolderImportModel' when calling AccountHolderImportApi->AccountHolderImportPost");
             }
 
 
@@ -325,18 +325,18 @@ namespace LocalGovImsApiClient.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = transactionImportModel;
+            localVarRequestOptions.Data = accountHolderImportModel;
 
-            localVarRequestOptions.Operation = "TransactionImportApi.TransactionImportPost";
+            localVarRequestOptions.Operation = "AccountHolderImportApi.AccountHolderImportPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TransactionImportModel>("/api/TransactionImport", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<AccountHolderImportModel>("/api/AccountHolderImport", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionImportPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AccountHolderImportPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
