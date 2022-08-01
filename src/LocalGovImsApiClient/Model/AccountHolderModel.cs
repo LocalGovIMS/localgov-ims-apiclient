@@ -52,9 +52,9 @@ namespace LocalGovImsApiClient.Model
         /// <param name="userField1">userField1.</param>
         /// <param name="userField2">userField2.</param>
         /// <param name="userField3">userField3.</param>
-        /// <param name="personalisedStopMessage">personalisedStopMessage.</param>
-        /// <param name="stopMessageReference">stopMessageReference.</param>
-        public AccountHolderModel(string accountReference = default(string), string fundCode = default(string), decimal? currentBalance = default(decimal?), decimal? periodCredit = default(decimal?), decimal? periodDebit = default(decimal?), string title = default(string), string forename = default(string), string surname = default(string), string houseNumber = default(string), string addressLine1 = default(string), string addressLine2 = default(string), string addressLine3 = default(string), string addressLine4 = default(string), string postcode = default(string), string recordType = default(string), string userField1 = default(string), string userField2 = default(string), string userField3 = default(string), string personalisedStopMessage = default(string), string stopMessageReference = default(string))
+        /// <param name="personalisedMessage">personalisedMessage.</param>
+        /// <param name="fundMessageId">fundMessageId.</param>
+        public AccountHolderModel(string accountReference = default(string), string fundCode = default(string), decimal? currentBalance = default(decimal?), decimal? periodCredit = default(decimal?), decimal? periodDebit = default(decimal?), string title = default(string), string forename = default(string), string surname = default(string), string houseNumber = default(string), string addressLine1 = default(string), string addressLine2 = default(string), string addressLine3 = default(string), string addressLine4 = default(string), string postcode = default(string), string recordType = default(string), string userField1 = default(string), string userField2 = default(string), string userField3 = default(string), string personalisedMessage = default(string), int? fundMessageId = default(int?))
         {
             this.AccountReference = accountReference;
             this.FundCode = fundCode;
@@ -74,8 +74,8 @@ namespace LocalGovImsApiClient.Model
             this.UserField1 = userField1;
             this.UserField2 = userField2;
             this.UserField3 = userField3;
-            this.PersonalisedStopMessage = personalisedStopMessage;
-            this.StopMessageReference = stopMessageReference;
+            this.PersonalisedMessage = personalisedMessage;
+            this.FundMessageId = fundMessageId;
         }
 
         /// <summary>
@@ -187,16 +187,16 @@ namespace LocalGovImsApiClient.Model
         public string UserField3 { get; set; }
 
         /// <summary>
-        /// Gets or Sets PersonalisedStopMessage
+        /// Gets or Sets PersonalisedMessage
         /// </summary>
-        [DataMember(Name = "PersonalisedStopMessage", EmitDefaultValue = true)]
-        public string PersonalisedStopMessage { get; set; }
+        [DataMember(Name = "PersonalisedMessage", EmitDefaultValue = true)]
+        public string PersonalisedMessage { get; set; }
 
         /// <summary>
-        /// Gets or Sets StopMessageReference
+        /// Gets or Sets FundMessageId
         /// </summary>
-        [DataMember(Name = "StopMessageReference", EmitDefaultValue = true)]
-        public string StopMessageReference { get; set; }
+        [DataMember(Name = "FundMessageId", EmitDefaultValue = true)]
+        public int? FundMessageId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -224,8 +224,8 @@ namespace LocalGovImsApiClient.Model
             sb.Append("  UserField1: ").Append(UserField1).Append("\n");
             sb.Append("  UserField2: ").Append(UserField2).Append("\n");
             sb.Append("  UserField3: ").Append(UserField3).Append("\n");
-            sb.Append("  PersonalisedStopMessage: ").Append(PersonalisedStopMessage).Append("\n");
-            sb.Append("  StopMessageReference: ").Append(StopMessageReference).Append("\n");
+            sb.Append("  PersonalisedMessage: ").Append(PersonalisedMessage).Append("\n");
+            sb.Append("  FundMessageId: ").Append(FundMessageId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -352,14 +352,14 @@ namespace LocalGovImsApiClient.Model
                     this.UserField3.Equals(input.UserField3))
                 ) && 
                 (
-                    this.PersonalisedStopMessage == input.PersonalisedStopMessage ||
-                    (this.PersonalisedStopMessage != null &&
-                    this.PersonalisedStopMessage.Equals(input.PersonalisedStopMessage))
+                    this.PersonalisedMessage == input.PersonalisedMessage ||
+                    (this.PersonalisedMessage != null &&
+                    this.PersonalisedMessage.Equals(input.PersonalisedMessage))
                 ) && 
                 (
-                    this.StopMessageReference == input.StopMessageReference ||
-                    (this.StopMessageReference != null &&
-                    this.StopMessageReference.Equals(input.StopMessageReference))
+                    this.FundMessageId == input.FundMessageId ||
+                    (this.FundMessageId != null &&
+                    this.FundMessageId.Equals(input.FundMessageId))
                 );
         }
 
@@ -444,13 +444,13 @@ namespace LocalGovImsApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.UserField3.GetHashCode();
                 }
-                if (this.PersonalisedStopMessage != null)
+                if (this.PersonalisedMessage != null)
                 {
-                    hashCode = (hashCode * 59) + this.PersonalisedStopMessage.GetHashCode();
+                    hashCode = (hashCode * 59) + this.PersonalisedMessage.GetHashCode();
                 }
-                if (this.StopMessageReference != null)
+                if (this.FundMessageId != null)
                 {
-                    hashCode = (hashCode * 59) + this.StopMessageReference.GetHashCode();
+                    hashCode = (hashCode * 59) + this.FundMessageId.GetHashCode();
                 }
                 return hashCode;
             }

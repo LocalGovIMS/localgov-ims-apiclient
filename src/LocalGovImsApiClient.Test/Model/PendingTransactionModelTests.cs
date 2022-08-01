@@ -177,14 +177,6 @@ namespace LocalGovImsApiClient.Test.Model
             // TODO unit test for the property 'Narrative'
         }
         /// <summary>
-        /// Test the property 'BatchReference'
-        /// </summary>
-        [Fact]
-        public void BatchReferenceTest()
-        {
-            // TODO unit test for the property 'BatchReference'
-        }
-        /// <summary>
         /// Test the property 'ExternalReference'
         /// </summary>
         [Fact]

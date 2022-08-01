@@ -201,20 +201,20 @@ namespace LocalGovImsApiClient.Test.Model
             // TODO unit test for the property 'UserField3'
         }
         /// <summary>
-        /// Test the property 'PersonalisedStopMessage'
+        /// Test the property 'PersonalisedMessage'
         /// </summary>
         [Fact]
-        public void PersonalisedStopMessageTest()
+        public void PersonalisedMessageTest()
         {
-            // TODO unit test for the property 'PersonalisedStopMessage'
+            // TODO unit test for the property 'PersonalisedMessage'
         }
         /// <summary>
-        /// Test the property 'StopMessageReference'
+        /// Test the property 'FundMessageId'
         /// </summary>
         [Fact]
-        public void StopMessageReferenceTest()
+        public void FundMessageIdTest()
         {
-            // TODO unit test for the property 'StopMessageReference'
+            // TODO unit test for the property 'FundMessageId'
         }
 
     }

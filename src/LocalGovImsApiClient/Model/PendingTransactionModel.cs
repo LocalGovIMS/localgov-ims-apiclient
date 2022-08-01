@@ -49,7 +49,6 @@ namespace LocalGovImsApiClient.Model
         /// <param name="vatRate">vatRate.</param>
         /// <param name="vatAmount">vatAmount.</param>
         /// <param name="narrative">narrative.</param>
-        /// <param name="batchReference">batchReference.</param>
         /// <param name="externalReference">externalReference.</param>
         /// <param name="payeeName">payeeName.</param>
         /// <param name="payeeBusinessName">payeeBusinessName.</param>
@@ -65,7 +64,7 @@ namespace LocalGovImsApiClient.Model
         /// <param name="failUrl">failUrl.</param>
         /// <param name="expiryDate">expiryDate.</param>
         /// <param name="statusId">statusId.</param>
-        public PendingTransactionModel(int id = default(int), string reference = default(string), string internalReference = default(string), string officeCode = default(string), DateTime? createdDate = default(DateTime?), DateTime? transactionDate = default(DateTime?), string accountReference = default(string), int userCode = default(int), string fundCode = default(string), string mopCode = default(string), decimal? amount = default(decimal?), string vatCode = default(string), float vatRate = default(float), decimal? vatAmount = default(decimal?), string narrative = default(string), string batchReference = default(string), string externalReference = default(string), string payeeName = default(string), string payeeBusinessName = default(string), string payeePremiseNumber = default(string), string payeePremiseName = default(string), string payeeStreet = default(string), string payeeArea = default(string), string payeeTown = default(string), string payeeCounty = default(string), string payeePostCode = default(string), string successUrl = default(string), string cancelUrl = default(string), string failUrl = default(string), DateTime? expiryDate = default(DateTime?), int statusId = default(int))
+        public PendingTransactionModel(int id = default(int), string reference = default(string), string internalReference = default(string), string officeCode = default(string), DateTime? createdDate = default(DateTime?), DateTime? transactionDate = default(DateTime?), string accountReference = default(string), int userCode = default(int), string fundCode = default(string), string mopCode = default(string), decimal? amount = default(decimal?), string vatCode = default(string), float vatRate = default(float), decimal? vatAmount = default(decimal?), string narrative = default(string), string externalReference = default(string), string payeeName = default(string), string payeeBusinessName = default(string), string payeePremiseNumber = default(string), string payeePremiseName = default(string), string payeeStreet = default(string), string payeeArea = default(string), string payeeTown = default(string), string payeeCounty = default(string), string payeePostCode = default(string), string successUrl = default(string), string cancelUrl = default(string), string failUrl = default(string), DateTime? expiryDate = default(DateTime?), int statusId = default(int))
         {
             this.Id = id;
             this.Reference = reference;
@@ -82,7 +81,6 @@ namespace LocalGovImsApiClient.Model
             this.VatRate = vatRate;
             this.VatAmount = vatAmount;
             this.Narrative = narrative;
-            this.BatchReference = batchReference;
             this.ExternalReference = externalReference;
             this.PayeeName = payeeName;
             this.PayeeBusinessName = payeeBusinessName;
@@ -189,12 +187,6 @@ namespace LocalGovImsApiClient.Model
         /// </summary>
         [DataMember(Name = "Narrative", EmitDefaultValue = true)]
         public string Narrative { get; set; }
-
-        /// <summary>
-        /// Gets or Sets BatchReference
-        /// </summary>
-        [DataMember(Name = "BatchReference", EmitDefaultValue = true)]
-        public string BatchReference { get; set; }
 
         /// <summary>
         /// Gets or Sets ExternalReference
@@ -309,7 +301,6 @@ namespace LocalGovImsApiClient.Model
             sb.Append("  VatRate: ").Append(VatRate).Append("\n");
             sb.Append("  VatAmount: ").Append(VatAmount).Append("\n");
             sb.Append("  Narrative: ").Append(Narrative).Append("\n");
-            sb.Append("  BatchReference: ").Append(BatchReference).Append("\n");
             sb.Append("  ExternalReference: ").Append(ExternalReference).Append("\n");
             sb.Append("  PayeeName: ").Append(PayeeName).Append("\n");
             sb.Append("  PayeeBusinessName: ").Append(PayeeBusinessName).Append("\n");
@@ -431,11 +422,6 @@ namespace LocalGovImsApiClient.Model
                     this.Narrative == input.Narrative ||
                     (this.Narrative != null &&
                     this.Narrative.Equals(input.Narrative))
-                ) && 
-                (
-                    this.BatchReference == input.BatchReference ||
-                    (this.BatchReference != null &&
-                    this.BatchReference.Equals(input.BatchReference))
                 ) && 
                 (
                     this.ExternalReference == input.ExternalReference ||
@@ -572,10 +558,6 @@ namespace LocalGovImsApiClient.Model
                 if (this.Narrative != null)
                 {
                     hashCode = (hashCode * 59) + this.Narrative.GetHashCode();
-                }
-                if (this.BatchReference != null)
-                {
-                    hashCode = (hashCode * 59) + this.BatchReference.GetHashCode();
                 }
                 if (this.ExternalReference != null)
                 {
@@ -715,18 +697,6 @@ namespace LocalGovImsApiClient.Model
             if (this.Narrative != null && this.Narrative.Length < 0)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Narrative, length must be greater than 0.", new [] { "Narrative" });
-            }
-
-            // BatchReference (string) maxLength
-            if (this.BatchReference != null && this.BatchReference.Length > 30)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BatchReference, length must be less than 30.", new [] { "BatchReference" });
-            }
-
-            // BatchReference (string) minLength
-            if (this.BatchReference != null && this.BatchReference.Length < 0)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BatchReference, length must be greater than 0.", new [] { "BatchReference" });
             }
 
             // ExternalReference (string) maxLength
