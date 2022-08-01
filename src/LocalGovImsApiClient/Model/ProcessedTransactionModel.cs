@@ -49,8 +49,8 @@ namespace LocalGovImsApiClient.Model
         /// <param name="vatRate">vatRate.</param>
         /// <param name="vatAmount">vatAmount.</param>
         /// <param name="narrative">narrative.</param>
-        /// <param name="batchReference">batchReference.</param>
-        public ProcessedTransactionModel(string reference = default(string), string internalReference = default(string), string pspReference = default(string), string officeCode = default(string), DateTime? entryDate = default(DateTime?), DateTime? transactionDate = default(DateTime?), string accountReference = default(string), int userCode = default(int), string fundCode = default(string), string mopCode = default(string), decimal? amount = default(decimal?), string vatCode = default(string), float vatRate = default(float), decimal? vatAmount = default(decimal?), string narrative = default(string), string batchReference = default(string))
+        /// <param name="importId">importId.</param>
+        public ProcessedTransactionModel(string reference = default(string), string internalReference = default(string), string pspReference = default(string), string officeCode = default(string), DateTime? entryDate = default(DateTime?), DateTime? transactionDate = default(DateTime?), string accountReference = default(string), int userCode = default(int), string fundCode = default(string), string mopCode = default(string), decimal? amount = default(decimal?), string vatCode = default(string), float vatRate = default(float), decimal? vatAmount = default(decimal?), string narrative = default(string), int? importId = default(int?))
         {
             this.Reference = reference;
             this.InternalReference = internalReference;
@@ -67,7 +67,7 @@ namespace LocalGovImsApiClient.Model
             this.VatRate = vatRate;
             this.VatAmount = vatAmount;
             this.Narrative = narrative;
-            this.BatchReference = batchReference;
+            this.ImportId = importId;
         }
 
         /// <summary>
@@ -161,10 +161,10 @@ namespace LocalGovImsApiClient.Model
         public string Narrative { get; set; }
 
         /// <summary>
-        /// Gets or Sets BatchReference
+        /// Gets or Sets ImportId
         /// </summary>
-        [DataMember(Name = "BatchReference", EmitDefaultValue = true)]
-        public string BatchReference { get; set; }
+        [DataMember(Name = "ImportId", EmitDefaultValue = true)]
+        public int? ImportId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -189,7 +189,7 @@ namespace LocalGovImsApiClient.Model
             sb.Append("  VatRate: ").Append(VatRate).Append("\n");
             sb.Append("  VatAmount: ").Append(VatAmount).Append("\n");
             sb.Append("  Narrative: ").Append(Narrative).Append("\n");
-            sb.Append("  BatchReference: ").Append(BatchReference).Append("\n");
+            sb.Append("  ImportId: ").Append(ImportId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -299,9 +299,9 @@ namespace LocalGovImsApiClient.Model
                     this.Narrative.Equals(input.Narrative))
                 ) && 
                 (
-                    this.BatchReference == input.BatchReference ||
-                    (this.BatchReference != null &&
-                    this.BatchReference.Equals(input.BatchReference))
+                    this.ImportId == input.ImportId ||
+                    (this.ImportId != null &&
+                    this.ImportId.Equals(input.ImportId))
                 );
         }
 
@@ -368,9 +368,9 @@ namespace LocalGovImsApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.Narrative.GetHashCode();
                 }
-                if (this.BatchReference != null)
+                if (this.ImportId != null)
                 {
-                    hashCode = (hashCode * 59) + this.BatchReference.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ImportId.GetHashCode();
                 }
                 return hashCode;
             }

@@ -177,12 +177,12 @@ namespace LocalGovImsApiClient.Test.Model
             // TODO unit test for the property 'Narrative'
         }
         /// <summary>
-        /// Test the property 'BatchReference'
+        /// Test the property 'ImportId'
         /// </summary>
         [Fact]
-        public void BatchReferenceTest()
+        public void ImportIdTest()
         {
-            // TODO unit test for the property 'BatchReference'
+            // TODO unit test for the property 'ImportId'
         }
 
     }

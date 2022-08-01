@@ -40,10 +40,10 @@ namespace LocalGovImsApiClient.Model
         /// <param name="accountNumber">accountNumber.</param>
         /// <param name="narrative">narrative.</param>
         /// <param name="amount">amount.</param>
-        /// <param name="batchReference">batchReference.</param>
+        /// <param name="importId">importId.</param>
         /// <param name="processId">processId.</param>
         /// <param name="notes">notes.</param>
-        public SuspenseModel(int id = default(int), DateTime transactionDate = default(DateTime), DateTime createdAt = default(DateTime), string accountNumber = default(string), string narrative = default(string), decimal amount = default(decimal), string batchReference = default(string), string processId = default(string), string notes = default(string))
+        public SuspenseModel(int id = default(int), DateTime transactionDate = default(DateTime), DateTime createdAt = default(DateTime), string accountNumber = default(string), string narrative = default(string), decimal amount = default(decimal), int? importId = default(int?), string processId = default(string), string notes = default(string))
         {
             this.Id = id;
             this.TransactionDate = transactionDate;
@@ -51,7 +51,7 @@ namespace LocalGovImsApiClient.Model
             this.AccountNumber = accountNumber;
             this.Narrative = narrative;
             this.Amount = amount;
-            this.BatchReference = batchReference;
+            this.ImportId = importId;
             this.ProcessId = processId;
             this.Notes = notes;
         }
@@ -93,10 +93,10 @@ namespace LocalGovImsApiClient.Model
         public decimal Amount { get; set; }
 
         /// <summary>
-        /// Gets or Sets BatchReference
+        /// Gets or Sets ImportId
         /// </summary>
-        [DataMember(Name = "BatchReference", EmitDefaultValue = true)]
-        public string BatchReference { get; set; }
+        [DataMember(Name = "ImportId", EmitDefaultValue = true)]
+        public int? ImportId { get; set; }
 
         /// <summary>
         /// Gets or Sets ProcessId
@@ -124,7 +124,7 @@ namespace LocalGovImsApiClient.Model
             sb.Append("  AccountNumber: ").Append(AccountNumber).Append("\n");
             sb.Append("  Narrative: ").Append(Narrative).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
-            sb.Append("  BatchReference: ").Append(BatchReference).Append("\n");
+            sb.Append("  ImportId: ").Append(ImportId).Append("\n");
             sb.Append("  ProcessId: ").Append(ProcessId).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("}\n");
@@ -191,9 +191,9 @@ namespace LocalGovImsApiClient.Model
                     this.Amount.Equals(input.Amount)
                 ) && 
                 (
-                    this.BatchReference == input.BatchReference ||
-                    (this.BatchReference != null &&
-                    this.BatchReference.Equals(input.BatchReference))
+                    this.ImportId == input.ImportId ||
+                    (this.ImportId != null &&
+                    this.ImportId.Equals(input.ImportId))
                 ) && 
                 (
                     this.ProcessId == input.ProcessId ||
@@ -234,9 +234,9 @@ namespace LocalGovImsApiClient.Model
                     hashCode = (hashCode * 59) + this.Narrative.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Amount.GetHashCode();
-                if (this.BatchReference != null)
+                if (this.ImportId != null)
                 {
-                    hashCode = (hashCode * 59) + this.BatchReference.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ImportId.GetHashCode();
                 }
                 if (this.ProcessId != null)
                 {
