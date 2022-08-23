@@ -65,5 +65,19 @@ namespace LocalGovImsApiClient.Test.Api
             //var response = instance.FundsGet(fundCode);
             //Assert.IsType<FundModel>(response);
         }
+
+        /// <summary>
+        /// Test FundsSearch
+        /// </summary>
+        [Fact]
+        public void FundsSearchTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string fundCode = null;
+            //string fundName = null;
+            //bool? isDisabled = null;
+            //var response = instance.FundsSearch(fundCode, fundName, isDisabled);
+            //Assert.IsType<List<FundModel>>(response);
+        }
     }
 }

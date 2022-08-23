@@ -46,6 +46,30 @@ namespace LocalGovImsApiClient.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FundModel</returns>
         ApiResponse<FundModel> FundsGetWithHttpInfo(string fundCode, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fundCode"> (optional)</param>
+        /// <param name="fundName"> (optional)</param>
+        /// <param name="isDisabled"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;FundModel&gt;</returns>
+        List<FundModel> FundsSearch(string fundCode = default(string), string fundName = default(string), bool? isDisabled = default(bool?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fundCode"> (optional)</param>
+        /// <param name="fundName"> (optional)</param>
+        /// <param name="isDisabled"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;FundModel&gt;</returns>
+        ApiResponse<List<FundModel>> FundsSearchWithHttpInfo(string fundCode = default(string), string fundName = default(string), bool? isDisabled = default(bool?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -80,6 +104,35 @@ namespace LocalGovImsApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FundModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<FundModel>> FundsGetWithHttpInfoAsync(string fundCode, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fundCode"> (optional)</param>
+        /// <param name="fundName"> (optional)</param>
+        /// <param name="isDisabled"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;FundModel&gt;</returns>
+        System.Threading.Tasks.Task<List<FundModel>> FundsSearchAsync(string fundCode = default(string), string fundName = default(string), bool? isDisabled = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fundCode"> (optional)</param>
+        /// <param name="fundName"> (optional)</param>
+        /// <param name="isDisabled"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;FundModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<FundModel>>> FundsSearchWithHttpInfoAsync(string fundCode = default(string), string fundName = default(string), bool? isDisabled = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -335,6 +388,168 @@ namespace LocalGovImsApiClient.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FundsGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fundCode"> (optional)</param>
+        /// <param name="fundName"> (optional)</param>
+        /// <param name="isDisabled"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;FundModel&gt;</returns>
+        public List<FundModel> FundsSearch(string fundCode = default(string), string fundName = default(string), bool? isDisabled = default(bool?), int operationIndex = 0)
+        {
+            LocalGovImsApiClient.Client.ApiResponse<List<FundModel>> localVarResponse = FundsSearchWithHttpInfo(fundCode, fundName, isDisabled);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fundCode"> (optional)</param>
+        /// <param name="fundName"> (optional)</param>
+        /// <param name="isDisabled"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;FundModel&gt;</returns>
+        public LocalGovImsApiClient.Client.ApiResponse<List<FundModel>> FundsSearchWithHttpInfo(string fundCode = default(string), string fundName = default(string), bool? isDisabled = default(bool?), int operationIndex = 0)
+        {
+            LocalGovImsApiClient.Client.RequestOptions localVarRequestOptions = new LocalGovImsApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = LocalGovImsApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = LocalGovImsApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (fundCode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(LocalGovImsApiClient.Client.ClientUtils.ParameterToMultiMap("", "FundCode", fundCode));
+            }
+            if (fundName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(LocalGovImsApiClient.Client.ClientUtils.ParameterToMultiMap("", "FundName", fundName));
+            }
+            if (isDisabled != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(LocalGovImsApiClient.Client.ClientUtils.ParameterToMultiMap("", "IsDisabled", isDisabled));
+            }
+
+            localVarRequestOptions.Operation = "FundsApi.FundsSearch";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<FundModel>>("/api/Funds", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("FundsSearch", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fundCode"> (optional)</param>
+        /// <param name="fundName"> (optional)</param>
+        /// <param name="isDisabled"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;FundModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<FundModel>> FundsSearchAsync(string fundCode = default(string), string fundName = default(string), bool? isDisabled = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            LocalGovImsApiClient.Client.ApiResponse<List<FundModel>> localVarResponse = await FundsSearchWithHttpInfoAsync(fundCode, fundName, isDisabled, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="LocalGovImsApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fundCode"> (optional)</param>
+        /// <param name="fundName"> (optional)</param>
+        /// <param name="isDisabled"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;FundModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<LocalGovImsApiClient.Client.ApiResponse<List<FundModel>>> FundsSearchWithHttpInfoAsync(string fundCode = default(string), string fundName = default(string), bool? isDisabled = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            LocalGovImsApiClient.Client.RequestOptions localVarRequestOptions = new LocalGovImsApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = LocalGovImsApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = LocalGovImsApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (fundCode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(LocalGovImsApiClient.Client.ClientUtils.ParameterToMultiMap("", "FundCode", fundCode));
+            }
+            if (fundName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(LocalGovImsApiClient.Client.ClientUtils.ParameterToMultiMap("", "FundName", fundName));
+            }
+            if (isDisabled != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(LocalGovImsApiClient.Client.ClientUtils.ParameterToMultiMap("", "IsDisabled", isDisabled));
+            }
+
+            localVarRequestOptions.Operation = "FundsApi.FundsSearch";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<FundModel>>("/api/Funds", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("FundsSearch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

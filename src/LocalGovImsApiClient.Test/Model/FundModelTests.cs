@@ -73,28 +73,12 @@ namespace LocalGovImsApiClient.Test.Model
             // TODO unit test for the property 'FundName'
         }
         /// <summary>
-        /// Test the property 'UseGeneralLedgerCode'
+        /// Test the property 'Metadata'
         /// </summary>
         [Fact]
-        public void UseGeneralLedgerCodeTest()
+        public void MetadataTest()
         {
-            // TODO unit test for the property 'UseGeneralLedgerCode'
-        }
-        /// <summary>
-        /// Test the property 'GeneralLedgerCode'
-        /// </summary>
-        [Fact]
-        public void GeneralLedgerCodeTest()
-        {
-            // TODO unit test for the property 'GeneralLedgerCode'
-        }
-        /// <summary>
-        /// Test the property 'IsGeneralLedgerDetail'
-        /// </summary>
-        [Fact]
-        public void IsGeneralLedgerDetailTest()
-        {
-            // TODO unit test for the property 'IsGeneralLedgerDetail'
+            // TODO unit test for the property 'Metadata'
         }
 
     }
