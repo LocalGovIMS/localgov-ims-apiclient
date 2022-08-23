@@ -36,16 +36,12 @@ namespace LocalGovImsApiClient.Model
         /// </summary>
         /// <param name="fundCode">fundCode.</param>
         /// <param name="fundName">fundName.</param>
-        /// <param name="useGeneralLedgerCode">useGeneralLedgerCode.</param>
-        /// <param name="generalLedgerCode">generalLedgerCode.</param>
-        /// <param name="isGeneralLedgerDetail">isGeneralLedgerDetail.</param>
-        public FundModel(string fundCode = default(string), string fundName = default(string), bool useGeneralLedgerCode = default(bool), string generalLedgerCode = default(string), bool isGeneralLedgerDetail = default(bool))
+        /// <param name="metadata">metadata.</param>
+        public FundModel(string fundCode = default(string), string fundName = default(string), List<FundMetadataModel> metadata = default(List<FundMetadataModel>))
         {
             this.FundCode = fundCode;
             this.FundName = fundName;
-            this.UseGeneralLedgerCode = useGeneralLedgerCode;
-            this.GeneralLedgerCode = generalLedgerCode;
-            this.IsGeneralLedgerDetail = isGeneralLedgerDetail;
+            this.Metadata = metadata;
         }
 
         /// <summary>
@@ -61,22 +57,10 @@ namespace LocalGovImsApiClient.Model
         public string FundName { get; set; }
 
         /// <summary>
-        /// Gets or Sets UseGeneralLedgerCode
+        /// Gets or Sets Metadata
         /// </summary>
-        [DataMember(Name = "UseGeneralLedgerCode", EmitDefaultValue = true)]
-        public bool UseGeneralLedgerCode { get; set; }
-
-        /// <summary>
-        /// Gets or Sets GeneralLedgerCode
-        /// </summary>
-        [DataMember(Name = "GeneralLedgerCode", EmitDefaultValue = true)]
-        public string GeneralLedgerCode { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsGeneralLedgerDetail
-        /// </summary>
-        [DataMember(Name = "IsGeneralLedgerDetail", EmitDefaultValue = true)]
-        public bool IsGeneralLedgerDetail { get; set; }
+        [DataMember(Name = "Metadata", EmitDefaultValue = true)]
+        public List<FundMetadataModel> Metadata { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -88,9 +72,7 @@ namespace LocalGovImsApiClient.Model
             sb.Append("class FundModel {\n");
             sb.Append("  FundCode: ").Append(FundCode).Append("\n");
             sb.Append("  FundName: ").Append(FundName).Append("\n");
-            sb.Append("  UseGeneralLedgerCode: ").Append(UseGeneralLedgerCode).Append("\n");
-            sb.Append("  GeneralLedgerCode: ").Append(GeneralLedgerCode).Append("\n");
-            sb.Append("  IsGeneralLedgerDetail: ").Append(IsGeneralLedgerDetail).Append("\n");
+            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -137,17 +119,10 @@ namespace LocalGovImsApiClient.Model
                     this.FundName.Equals(input.FundName))
                 ) && 
                 (
-                    this.UseGeneralLedgerCode == input.UseGeneralLedgerCode ||
-                    this.UseGeneralLedgerCode.Equals(input.UseGeneralLedgerCode)
-                ) && 
-                (
-                    this.GeneralLedgerCode == input.GeneralLedgerCode ||
-                    (this.GeneralLedgerCode != null &&
-                    this.GeneralLedgerCode.Equals(input.GeneralLedgerCode))
-                ) && 
-                (
-                    this.IsGeneralLedgerDetail == input.IsGeneralLedgerDetail ||
-                    this.IsGeneralLedgerDetail.Equals(input.IsGeneralLedgerDetail)
+                    this.Metadata == input.Metadata ||
+                    this.Metadata != null &&
+                    input.Metadata != null &&
+                    this.Metadata.SequenceEqual(input.Metadata)
                 );
         }
 
@@ -168,12 +143,10 @@ namespace LocalGovImsApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.FundName.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.UseGeneralLedgerCode.GetHashCode();
-                if (this.GeneralLedgerCode != null)
+                if (this.Metadata != null)
                 {
-                    hashCode = (hashCode * 59) + this.GeneralLedgerCode.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.IsGeneralLedgerDetail.GetHashCode();
                 return hashCode;
             }
         }
