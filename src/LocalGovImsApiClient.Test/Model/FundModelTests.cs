@@ -73,6 +73,62 @@ namespace LocalGovImsApiClient.Test.Model
             // TODO unit test for the property 'FundName'
         }
         /// <summary>
+        /// Test the property 'DisplayName'
+        /// </summary>
+        [Fact]
+        public void DisplayNameTest()
+        {
+            // TODO unit test for the property 'DisplayName'
+        }
+        /// <summary>
+        /// Test the property 'VatCode'
+        /// </summary>
+        [Fact]
+        public void VatCodeTest()
+        {
+            // TODO unit test for the property 'VatCode'
+        }
+        /// <summary>
+        /// Test the property 'MaximumAmount'
+        /// </summary>
+        [Fact]
+        public void MaximumAmountTest()
+        {
+            // TODO unit test for the property 'MaximumAmount'
+        }
+        /// <summary>
+        /// Test the property 'OverPayAccount'
+        /// </summary>
+        [Fact]
+        public void OverPayAccountTest()
+        {
+            // TODO unit test for the property 'OverPayAccount'
+        }
+        /// <summary>
+        /// Test the property 'AccountExist'
+        /// </summary>
+        [Fact]
+        public void AccountExistTest()
+        {
+            // TODO unit test for the property 'AccountExist'
+        }
+        /// <summary>
+        /// Test the property 'AquireAddress'
+        /// </summary>
+        [Fact]
+        public void AquireAddressTest()
+        {
+            // TODO unit test for the property 'AquireAddress'
+        }
+        /// <summary>
+        /// Test the property 'VatOverride'
+        /// </summary>
+        [Fact]
+        public void VatOverrideTest()
+        {
+            // TODO unit test for the property 'VatOverride'
+        }
+        /// <summary>
         /// Test the property 'Metadata'
         /// </summary>
         [Fact]

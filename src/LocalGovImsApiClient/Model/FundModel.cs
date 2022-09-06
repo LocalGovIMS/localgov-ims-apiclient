@@ -36,11 +36,25 @@ namespace LocalGovImsApiClient.Model
         /// </summary>
         /// <param name="fundCode">fundCode.</param>
         /// <param name="fundName">fundName.</param>
+        /// <param name="displayName">displayName.</param>
+        /// <param name="vatCode">vatCode.</param>
+        /// <param name="maximumAmount">maximumAmount.</param>
+        /// <param name="overPayAccount">overPayAccount.</param>
+        /// <param name="accountExist">accountExist.</param>
+        /// <param name="aquireAddress">aquireAddress.</param>
+        /// <param name="vatOverride">vatOverride.</param>
         /// <param name="metadata">metadata.</param>
-        public FundModel(string fundCode = default(string), string fundName = default(string), List<FundMetadataModel> metadata = default(List<FundMetadataModel>))
+        public FundModel(string fundCode = default(string), string fundName = default(string), string displayName = default(string), string vatCode = default(string), decimal? maximumAmount = default(decimal?), bool overPayAccount = default(bool), bool accountExist = default(bool), bool aquireAddress = default(bool), bool vatOverride = default(bool), List<FundMetadataModel> metadata = default(List<FundMetadataModel>))
         {
             this.FundCode = fundCode;
             this.FundName = fundName;
+            this.DisplayName = displayName;
+            this.VatCode = vatCode;
+            this.MaximumAmount = maximumAmount;
+            this.OverPayAccount = overPayAccount;
+            this.AccountExist = accountExist;
+            this.AquireAddress = aquireAddress;
+            this.VatOverride = vatOverride;
             this.Metadata = metadata;
         }
 
@@ -55,6 +69,48 @@ namespace LocalGovImsApiClient.Model
         /// </summary>
         [DataMember(Name = "FundName", EmitDefaultValue = true)]
         public string FundName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DisplayName
+        /// </summary>
+        [DataMember(Name = "DisplayName", EmitDefaultValue = true)]
+        public string DisplayName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets VatCode
+        /// </summary>
+        [DataMember(Name = "VatCode", EmitDefaultValue = true)]
+        public string VatCode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MaximumAmount
+        /// </summary>
+        [DataMember(Name = "MaximumAmount", EmitDefaultValue = true)]
+        public decimal? MaximumAmount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets OverPayAccount
+        /// </summary>
+        [DataMember(Name = "OverPayAccount", EmitDefaultValue = true)]
+        public bool OverPayAccount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AccountExist
+        /// </summary>
+        [DataMember(Name = "AccountExist", EmitDefaultValue = true)]
+        public bool AccountExist { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AquireAddress
+        /// </summary>
+        [DataMember(Name = "AquireAddress", EmitDefaultValue = true)]
+        public bool AquireAddress { get; set; }
+
+        /// <summary>
+        /// Gets or Sets VatOverride
+        /// </summary>
+        [DataMember(Name = "VatOverride", EmitDefaultValue = true)]
+        public bool VatOverride { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata
@@ -72,6 +128,13 @@ namespace LocalGovImsApiClient.Model
             sb.Append("class FundModel {\n");
             sb.Append("  FundCode: ").Append(FundCode).Append("\n");
             sb.Append("  FundName: ").Append(FundName).Append("\n");
+            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
+            sb.Append("  VatCode: ").Append(VatCode).Append("\n");
+            sb.Append("  MaximumAmount: ").Append(MaximumAmount).Append("\n");
+            sb.Append("  OverPayAccount: ").Append(OverPayAccount).Append("\n");
+            sb.Append("  AccountExist: ").Append(AccountExist).Append("\n");
+            sb.Append("  AquireAddress: ").Append(AquireAddress).Append("\n");
+            sb.Append("  VatOverride: ").Append(VatOverride).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -119,6 +182,37 @@ namespace LocalGovImsApiClient.Model
                     this.FundName.Equals(input.FundName))
                 ) && 
                 (
+                    this.DisplayName == input.DisplayName ||
+                    (this.DisplayName != null &&
+                    this.DisplayName.Equals(input.DisplayName))
+                ) && 
+                (
+                    this.VatCode == input.VatCode ||
+                    (this.VatCode != null &&
+                    this.VatCode.Equals(input.VatCode))
+                ) && 
+                (
+                    this.MaximumAmount == input.MaximumAmount ||
+                    (this.MaximumAmount != null &&
+                    this.MaximumAmount.Equals(input.MaximumAmount))
+                ) && 
+                (
+                    this.OverPayAccount == input.OverPayAccount ||
+                    this.OverPayAccount.Equals(input.OverPayAccount)
+                ) && 
+                (
+                    this.AccountExist == input.AccountExist ||
+                    this.AccountExist.Equals(input.AccountExist)
+                ) && 
+                (
+                    this.AquireAddress == input.AquireAddress ||
+                    this.AquireAddress.Equals(input.AquireAddress)
+                ) && 
+                (
+                    this.VatOverride == input.VatOverride ||
+                    this.VatOverride.Equals(input.VatOverride)
+                ) && 
+                (
                     this.Metadata == input.Metadata ||
                     this.Metadata != null &&
                     input.Metadata != null &&
@@ -143,6 +237,22 @@ namespace LocalGovImsApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.FundName.GetHashCode();
                 }
+                if (this.DisplayName != null)
+                {
+                    hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();
+                }
+                if (this.VatCode != null)
+                {
+                    hashCode = (hashCode * 59) + this.VatCode.GetHashCode();
+                }
+                if (this.MaximumAmount != null)
+                {
+                    hashCode = (hashCode * 59) + this.MaximumAmount.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.OverPayAccount.GetHashCode();
+                hashCode = (hashCode * 59) + this.AccountExist.GetHashCode();
+                hashCode = (hashCode * 59) + this.AquireAddress.GetHashCode();
+                hashCode = (hashCode * 59) + this.VatOverride.GetHashCode();
                 if (this.Metadata != null)
                 {
                     hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
