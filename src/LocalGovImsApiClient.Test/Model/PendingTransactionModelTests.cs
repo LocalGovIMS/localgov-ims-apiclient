@@ -193,60 +193,36 @@ namespace LocalGovImsApiClient.Test.Model
             // TODO unit test for the property 'PayeeName'
         }
         /// <summary>
-        /// Test the property 'PayeeBusinessName'
+        /// Test the property 'PayeeAddressLine1'
         /// </summary>
         [Fact]
-        public void PayeeBusinessNameTest()
+        public void PayeeAddressLine1Test()
         {
-            // TODO unit test for the property 'PayeeBusinessName'
+            // TODO unit test for the property 'PayeeAddressLine1'
         }
         /// <summary>
-        /// Test the property 'PayeePremiseNumber'
+        /// Test the property 'PayeeAddressLine2'
         /// </summary>
         [Fact]
-        public void PayeePremiseNumberTest()
+        public void PayeeAddressLine2Test()
         {
-            // TODO unit test for the property 'PayeePremiseNumber'
+            // TODO unit test for the property 'PayeeAddressLine2'
         }
         /// <summary>
-        /// Test the property 'PayeePremiseName'
+        /// Test the property 'PayeeAddressLine3'
         /// </summary>
         [Fact]
-        public void PayeePremiseNameTest()
+        public void PayeeAddressLine3Test()
         {
-            // TODO unit test for the property 'PayeePremiseName'
+            // TODO unit test for the property 'PayeeAddressLine3'
         }
         /// <summary>
-        /// Test the property 'PayeeStreet'
+        /// Test the property 'PayeeAddressLine4'
         /// </summary>
         [Fact]
-        public void PayeeStreetTest()
+        public void PayeeAddressLine4Test()
         {
-            // TODO unit test for the property 'PayeeStreet'
-        }
-        /// <summary>
-        /// Test the property 'PayeeArea'
-        /// </summary>
-        [Fact]
-        public void PayeeAreaTest()
-        {
-            // TODO unit test for the property 'PayeeArea'
-        }
-        /// <summary>
-        /// Test the property 'PayeeTown'
-        /// </summary>
-        [Fact]
-        public void PayeeTownTest()
-        {
-            // TODO unit test for the property 'PayeeTown'
-        }
-        /// <summary>
-        /// Test the property 'PayeeCounty'
-        /// </summary>
-        [Fact]
-        public void PayeeCountyTest()
-        {
-            // TODO unit test for the property 'PayeeCounty'
+            // TODO unit test for the property 'PayeeAddressLine4'
         }
         /// <summary>
         /// Test the property 'PayeePostCode'

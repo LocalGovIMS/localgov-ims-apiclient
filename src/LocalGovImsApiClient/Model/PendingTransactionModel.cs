@@ -51,20 +51,17 @@ namespace LocalGovImsApiClient.Model
         /// <param name="narrative">narrative.</param>
         /// <param name="externalReference">externalReference.</param>
         /// <param name="payeeName">payeeName.</param>
-        /// <param name="payeeBusinessName">payeeBusinessName.</param>
-        /// <param name="payeePremiseNumber">payeePremiseNumber.</param>
-        /// <param name="payeePremiseName">payeePremiseName.</param>
-        /// <param name="payeeStreet">payeeStreet.</param>
-        /// <param name="payeeArea">payeeArea.</param>
-        /// <param name="payeeTown">payeeTown.</param>
-        /// <param name="payeeCounty">payeeCounty.</param>
+        /// <param name="payeeAddressLine1">payeeAddressLine1.</param>
+        /// <param name="payeeAddressLine2">payeeAddressLine2.</param>
+        /// <param name="payeeAddressLine3">payeeAddressLine3.</param>
+        /// <param name="payeeAddressLine4">payeeAddressLine4.</param>
         /// <param name="payeePostCode">payeePostCode.</param>
         /// <param name="successUrl">successUrl.</param>
         /// <param name="cancelUrl">cancelUrl.</param>
         /// <param name="failUrl">failUrl.</param>
         /// <param name="expiryDate">expiryDate.</param>
         /// <param name="statusId">statusId.</param>
-        public PendingTransactionModel(int id = default(int), string reference = default(string), string internalReference = default(string), string officeCode = default(string), DateTime? createdDate = default(DateTime?), DateTime? transactionDate = default(DateTime?), string accountReference = default(string), int userCode = default(int), string fundCode = default(string), string mopCode = default(string), decimal? amount = default(decimal?), string vatCode = default(string), float vatRate = default(float), decimal? vatAmount = default(decimal?), string narrative = default(string), string externalReference = default(string), string payeeName = default(string), string payeeBusinessName = default(string), string payeePremiseNumber = default(string), string payeePremiseName = default(string), string payeeStreet = default(string), string payeeArea = default(string), string payeeTown = default(string), string payeeCounty = default(string), string payeePostCode = default(string), string successUrl = default(string), string cancelUrl = default(string), string failUrl = default(string), DateTime? expiryDate = default(DateTime?), int statusId = default(int))
+        public PendingTransactionModel(int id = default(int), string reference = default(string), string internalReference = default(string), string officeCode = default(string), DateTime? createdDate = default(DateTime?), DateTime? transactionDate = default(DateTime?), string accountReference = default(string), int userCode = default(int), string fundCode = default(string), string mopCode = default(string), decimal? amount = default(decimal?), string vatCode = default(string), float vatRate = default(float), decimal? vatAmount = default(decimal?), string narrative = default(string), string externalReference = default(string), string payeeName = default(string), string payeeAddressLine1 = default(string), string payeeAddressLine2 = default(string), string payeeAddressLine3 = default(string), string payeeAddressLine4 = default(string), string payeePostCode = default(string), string successUrl = default(string), string cancelUrl = default(string), string failUrl = default(string), DateTime? expiryDate = default(DateTime?), int statusId = default(int))
         {
             this.Id = id;
             this.Reference = reference;
@@ -83,13 +80,10 @@ namespace LocalGovImsApiClient.Model
             this.Narrative = narrative;
             this.ExternalReference = externalReference;
             this.PayeeName = payeeName;
-            this.PayeeBusinessName = payeeBusinessName;
-            this.PayeePremiseNumber = payeePremiseNumber;
-            this.PayeePremiseName = payeePremiseName;
-            this.PayeeStreet = payeeStreet;
-            this.PayeeArea = payeeArea;
-            this.PayeeTown = payeeTown;
-            this.PayeeCounty = payeeCounty;
+            this.PayeeAddressLine1 = payeeAddressLine1;
+            this.PayeeAddressLine2 = payeeAddressLine2;
+            this.PayeeAddressLine3 = payeeAddressLine3;
+            this.PayeeAddressLine4 = payeeAddressLine4;
             this.PayeePostCode = payeePostCode;
             this.SuccessUrl = successUrl;
             this.CancelUrl = cancelUrl;
@@ -201,46 +195,28 @@ namespace LocalGovImsApiClient.Model
         public string PayeeName { get; set; }
 
         /// <summary>
-        /// Gets or Sets PayeeBusinessName
+        /// Gets or Sets PayeeAddressLine1
         /// </summary>
-        [DataMember(Name = "PayeeBusinessName", EmitDefaultValue = true)]
-        public string PayeeBusinessName { get; set; }
+        [DataMember(Name = "PayeeAddressLine1", EmitDefaultValue = true)]
+        public string PayeeAddressLine1 { get; set; }
 
         /// <summary>
-        /// Gets or Sets PayeePremiseNumber
+        /// Gets or Sets PayeeAddressLine2
         /// </summary>
-        [DataMember(Name = "PayeePremiseNumber", EmitDefaultValue = true)]
-        public string PayeePremiseNumber { get; set; }
+        [DataMember(Name = "PayeeAddressLine2", EmitDefaultValue = true)]
+        public string PayeeAddressLine2 { get; set; }
 
         /// <summary>
-        /// Gets or Sets PayeePremiseName
+        /// Gets or Sets PayeeAddressLine3
         /// </summary>
-        [DataMember(Name = "PayeePremiseName", EmitDefaultValue = true)]
-        public string PayeePremiseName { get; set; }
+        [DataMember(Name = "PayeeAddressLine3", EmitDefaultValue = true)]
+        public string PayeeAddressLine3 { get; set; }
 
         /// <summary>
-        /// Gets or Sets PayeeStreet
+        /// Gets or Sets PayeeAddressLine4
         /// </summary>
-        [DataMember(Name = "PayeeStreet", EmitDefaultValue = true)]
-        public string PayeeStreet { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PayeeArea
-        /// </summary>
-        [DataMember(Name = "PayeeArea", EmitDefaultValue = true)]
-        public string PayeeArea { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PayeeTown
-        /// </summary>
-        [DataMember(Name = "PayeeTown", EmitDefaultValue = true)]
-        public string PayeeTown { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PayeeCounty
-        /// </summary>
-        [DataMember(Name = "PayeeCounty", EmitDefaultValue = true)]
-        public string PayeeCounty { get; set; }
+        [DataMember(Name = "PayeeAddressLine4", EmitDefaultValue = true)]
+        public string PayeeAddressLine4 { get; set; }
 
         /// <summary>
         /// Gets or Sets PayeePostCode
@@ -303,13 +279,10 @@ namespace LocalGovImsApiClient.Model
             sb.Append("  Narrative: ").Append(Narrative).Append("\n");
             sb.Append("  ExternalReference: ").Append(ExternalReference).Append("\n");
             sb.Append("  PayeeName: ").Append(PayeeName).Append("\n");
-            sb.Append("  PayeeBusinessName: ").Append(PayeeBusinessName).Append("\n");
-            sb.Append("  PayeePremiseNumber: ").Append(PayeePremiseNumber).Append("\n");
-            sb.Append("  PayeePremiseName: ").Append(PayeePremiseName).Append("\n");
-            sb.Append("  PayeeStreet: ").Append(PayeeStreet).Append("\n");
-            sb.Append("  PayeeArea: ").Append(PayeeArea).Append("\n");
-            sb.Append("  PayeeTown: ").Append(PayeeTown).Append("\n");
-            sb.Append("  PayeeCounty: ").Append(PayeeCounty).Append("\n");
+            sb.Append("  PayeeAddressLine1: ").Append(PayeeAddressLine1).Append("\n");
+            sb.Append("  PayeeAddressLine2: ").Append(PayeeAddressLine2).Append("\n");
+            sb.Append("  PayeeAddressLine3: ").Append(PayeeAddressLine3).Append("\n");
+            sb.Append("  PayeeAddressLine4: ").Append(PayeeAddressLine4).Append("\n");
             sb.Append("  PayeePostCode: ").Append(PayeePostCode).Append("\n");
             sb.Append("  SuccessUrl: ").Append(SuccessUrl).Append("\n");
             sb.Append("  CancelUrl: ").Append(CancelUrl).Append("\n");
@@ -434,39 +407,24 @@ namespace LocalGovImsApiClient.Model
                     this.PayeeName.Equals(input.PayeeName))
                 ) && 
                 (
-                    this.PayeeBusinessName == input.PayeeBusinessName ||
-                    (this.PayeeBusinessName != null &&
-                    this.PayeeBusinessName.Equals(input.PayeeBusinessName))
+                    this.PayeeAddressLine1 == input.PayeeAddressLine1 ||
+                    (this.PayeeAddressLine1 != null &&
+                    this.PayeeAddressLine1.Equals(input.PayeeAddressLine1))
                 ) && 
                 (
-                    this.PayeePremiseNumber == input.PayeePremiseNumber ||
-                    (this.PayeePremiseNumber != null &&
-                    this.PayeePremiseNumber.Equals(input.PayeePremiseNumber))
+                    this.PayeeAddressLine2 == input.PayeeAddressLine2 ||
+                    (this.PayeeAddressLine2 != null &&
+                    this.PayeeAddressLine2.Equals(input.PayeeAddressLine2))
                 ) && 
                 (
-                    this.PayeePremiseName == input.PayeePremiseName ||
-                    (this.PayeePremiseName != null &&
-                    this.PayeePremiseName.Equals(input.PayeePremiseName))
+                    this.PayeeAddressLine3 == input.PayeeAddressLine3 ||
+                    (this.PayeeAddressLine3 != null &&
+                    this.PayeeAddressLine3.Equals(input.PayeeAddressLine3))
                 ) && 
                 (
-                    this.PayeeStreet == input.PayeeStreet ||
-                    (this.PayeeStreet != null &&
-                    this.PayeeStreet.Equals(input.PayeeStreet))
-                ) && 
-                (
-                    this.PayeeArea == input.PayeeArea ||
-                    (this.PayeeArea != null &&
-                    this.PayeeArea.Equals(input.PayeeArea))
-                ) && 
-                (
-                    this.PayeeTown == input.PayeeTown ||
-                    (this.PayeeTown != null &&
-                    this.PayeeTown.Equals(input.PayeeTown))
-                ) && 
-                (
-                    this.PayeeCounty == input.PayeeCounty ||
-                    (this.PayeeCounty != null &&
-                    this.PayeeCounty.Equals(input.PayeeCounty))
+                    this.PayeeAddressLine4 == input.PayeeAddressLine4 ||
+                    (this.PayeeAddressLine4 != null &&
+                    this.PayeeAddressLine4.Equals(input.PayeeAddressLine4))
                 ) && 
                 (
                     this.PayeePostCode == input.PayeePostCode ||
@@ -567,33 +525,21 @@ namespace LocalGovImsApiClient.Model
                 {
                     hashCode = (hashCode * 59) + this.PayeeName.GetHashCode();
                 }
-                if (this.PayeeBusinessName != null)
+                if (this.PayeeAddressLine1 != null)
                 {
-                    hashCode = (hashCode * 59) + this.PayeeBusinessName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.PayeeAddressLine1.GetHashCode();
                 }
-                if (this.PayeePremiseNumber != null)
+                if (this.PayeeAddressLine2 != null)
                 {
-                    hashCode = (hashCode * 59) + this.PayeePremiseNumber.GetHashCode();
+                    hashCode = (hashCode * 59) + this.PayeeAddressLine2.GetHashCode();
                 }
-                if (this.PayeePremiseName != null)
+                if (this.PayeeAddressLine3 != null)
                 {
-                    hashCode = (hashCode * 59) + this.PayeePremiseName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.PayeeAddressLine3.GetHashCode();
                 }
-                if (this.PayeeStreet != null)
+                if (this.PayeeAddressLine4 != null)
                 {
-                    hashCode = (hashCode * 59) + this.PayeeStreet.GetHashCode();
-                }
-                if (this.PayeeArea != null)
-                {
-                    hashCode = (hashCode * 59) + this.PayeeArea.GetHashCode();
-                }
-                if (this.PayeeTown != null)
-                {
-                    hashCode = (hashCode * 59) + this.PayeeTown.GetHashCode();
-                }
-                if (this.PayeeCounty != null)
-                {
-                    hashCode = (hashCode * 59) + this.PayeeCounty.GetHashCode();
+                    hashCode = (hashCode * 59) + this.PayeeAddressLine4.GetHashCode();
                 }
                 if (this.PayeePostCode != null)
                 {
@@ -723,88 +669,52 @@ namespace LocalGovImsApiClient.Model
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeName, length must be greater than 0.", new [] { "PayeeName" });
             }
 
-            // PayeeBusinessName (string) maxLength
-            if (this.PayeeBusinessName != null && this.PayeeBusinessName.Length > 100)
+            // PayeeAddressLine1 (string) maxLength
+            if (this.PayeeAddressLine1 != null && this.PayeeAddressLine1.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeBusinessName, length must be less than 100.", new [] { "PayeeBusinessName" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeAddressLine1, length must be less than 50.", new [] { "PayeeAddressLine1" });
             }
 
-            // PayeeBusinessName (string) minLength
-            if (this.PayeeBusinessName != null && this.PayeeBusinessName.Length < 0)
+            // PayeeAddressLine1 (string) minLength
+            if (this.PayeeAddressLine1 != null && this.PayeeAddressLine1.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeBusinessName, length must be greater than 0.", new [] { "PayeeBusinessName" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeAddressLine1, length must be greater than 0.", new [] { "PayeeAddressLine1" });
             }
 
-            // PayeePremiseNumber (string) maxLength
-            if (this.PayeePremiseNumber != null && this.PayeePremiseNumber.Length > 50)
+            // PayeeAddressLine2 (string) maxLength
+            if (this.PayeeAddressLine2 != null && this.PayeeAddressLine2.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeePremiseNumber, length must be less than 50.", new [] { "PayeePremiseNumber" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeAddressLine2, length must be less than 50.", new [] { "PayeeAddressLine2" });
             }
 
-            // PayeePremiseNumber (string) minLength
-            if (this.PayeePremiseNumber != null && this.PayeePremiseNumber.Length < 0)
+            // PayeeAddressLine2 (string) minLength
+            if (this.PayeeAddressLine2 != null && this.PayeeAddressLine2.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeePremiseNumber, length must be greater than 0.", new [] { "PayeePremiseNumber" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeAddressLine2, length must be greater than 0.", new [] { "PayeeAddressLine2" });
             }
 
-            // PayeePremiseName (string) maxLength
-            if (this.PayeePremiseName != null && this.PayeePremiseName.Length > 100)
+            // PayeeAddressLine3 (string) maxLength
+            if (this.PayeeAddressLine3 != null && this.PayeeAddressLine3.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeePremiseName, length must be less than 100.", new [] { "PayeePremiseName" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeAddressLine3, length must be less than 50.", new [] { "PayeeAddressLine3" });
             }
 
-            // PayeePremiseName (string) minLength
-            if (this.PayeePremiseName != null && this.PayeePremiseName.Length < 0)
+            // PayeeAddressLine3 (string) minLength
+            if (this.PayeeAddressLine3 != null && this.PayeeAddressLine3.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeePremiseName, length must be greater than 0.", new [] { "PayeePremiseName" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeAddressLine3, length must be greater than 0.", new [] { "PayeeAddressLine3" });
             }
 
-            // PayeeStreet (string) maxLength
-            if (this.PayeeStreet != null && this.PayeeStreet.Length > 50)
+            // PayeeAddressLine4 (string) maxLength
+            if (this.PayeeAddressLine4 != null && this.PayeeAddressLine4.Length > 50)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeStreet, length must be less than 50.", new [] { "PayeeStreet" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeAddressLine4, length must be less than 50.", new [] { "PayeeAddressLine4" });
             }
 
-            // PayeeStreet (string) minLength
-            if (this.PayeeStreet != null && this.PayeeStreet.Length < 0)
+            // PayeeAddressLine4 (string) minLength
+            if (this.PayeeAddressLine4 != null && this.PayeeAddressLine4.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeStreet, length must be greater than 0.", new [] { "PayeeStreet" });
-            }
-
-            // PayeeArea (string) maxLength
-            if (this.PayeeArea != null && this.PayeeArea.Length > 50)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeArea, length must be less than 50.", new [] { "PayeeArea" });
-            }
-
-            // PayeeArea (string) minLength
-            if (this.PayeeArea != null && this.PayeeArea.Length < 0)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeArea, length must be greater than 0.", new [] { "PayeeArea" });
-            }
-
-            // PayeeTown (string) maxLength
-            if (this.PayeeTown != null && this.PayeeTown.Length > 50)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeTown, length must be less than 50.", new [] { "PayeeTown" });
-            }
-
-            // PayeeTown (string) minLength
-            if (this.PayeeTown != null && this.PayeeTown.Length < 0)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeTown, length must be greater than 0.", new [] { "PayeeTown" });
-            }
-
-            // PayeeCounty (string) maxLength
-            if (this.PayeeCounty != null && this.PayeeCounty.Length > 50)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeCounty, length must be less than 50.", new [] { "PayeeCounty" });
-            }
-
-            // PayeeCounty (string) minLength
-            if (this.PayeeCounty != null && this.PayeeCounty.Length < 0)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeCounty, length must be greater than 0.", new [] { "PayeeCounty" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PayeeAddressLine4, length must be greater than 0.", new [] { "PayeeAddressLine4" });
             }
 
             // PayeePostCode (string) maxLength
